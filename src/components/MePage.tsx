@@ -52,7 +52,7 @@ const MePage: React.FC = () => {
                     <div className="w-56 h-56 left-[118.04px] top-[389.21px] absolute bg-[#CAFF69] rounded-full"></div>
                 </div>
             </div>
-            <img className="w-[930.64px] h-[930.64px] left-[41.47px] top-[73px] absolute origin-top-left rotate-[5.58deg]" src="/src/assets/me.svg" />
+            <img className="w-[930.64px] h-[930.64px] left-[41.47px] top-[73px] absolute origin-top-left rotate-[5.58deg]" src="/assets/me.svg" />
             <div className="w-[862px] left-[858px] top-[392px] absolute text-justify justify-start text-zinc-950 text-2xl font-extralight font-['Inter']">
                 I’m a Visual Designer with 2+ years of experience, always curious about how design can tell stories and spark emotions. I explore different mediums, experiment with colors, and constantly try new ways of bringing ideas to life. For me, design isn’t just about making things look good, it’s about making them feel good.<br/><br/>I love creating work that carries a sense of playfulness with purpose. Sometimes that looks like nostalgic illustrations, sometimes it’s bold layouts or quirky stickers, and other times it’s just me scribbling in a sketchbook until something clicks. I believe design should invite people in, make them smile, and leave a little memory behind.<br/><br/>I design cool stuff &lt;3
             </div>
@@ -67,7 +67,7 @@ const MePage: React.FC = () => {
                 style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                 aria-label="Go to HomePage"
             >
-                <img className="w-16 h-14 left-[926px] top-[46px] absolute" src="/src/assets/cat.svg" />
+                <img className="w-16 h-14 left-[926px] top-[46px] absolute" src="/assets/cat.svg" />
             </button>
         </div>
     );

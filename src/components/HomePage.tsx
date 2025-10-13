@@ -41,7 +41,7 @@ export default function HomePage() {
           aria-label="Go to MePage"
         >
           <img 
-            src="/src/assets/floatingLady.png" 
+            src="/assets/floatingLady.png" 
             alt="Floating Lady" 
             className="w-auto h-[900px] object-contain animate-[bounce_6s_ease-in-out_infinite] opacity-90"
           />
