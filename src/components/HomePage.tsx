@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import MePage from './MePage'; // Import your MePage component
 
 export default function HomePage() {
@@ -82,7 +82,7 @@ export default function HomePage() {
         </div>
       ))}
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% {
             transform: translateY(0px);
