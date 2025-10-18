@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import MePage from './MePage';
-// Dummy components for demonstration
-const QuestPage = () => <div className="w-full h-full flex items-center justify-center text-5xl">Quest Page</div>;
-const ProjectsPage = () => <div className="w-full h-full flex items-center justify-center text-5xl">Projects Page</div>;
+import QuestPage from './QuestPage';
+import ProjectsPage from './ProjectsPage';
 
 export default function HomePage() {
   const [hoveredBubble, setHoveredBubble] = useState<number | null>(null);
@@ -35,13 +34,13 @@ export default function HomePage() {
   if (showProjects) return <ProjectsPage />;
 
   return (
-    <div className="w-[1920px] h-[1080px] relative bg-[#CAFF69] overflow-hidden">
+    <div className="w-screen h-screen relative bg-[#CAFF69] overflow-hidden">
       {/* Name and Title */}
       <div className="absolute left-[220px] top-[370px] z-10 text-left">
-        <div className="text-black font-extrabold text-5xl leading-tight tracking-wide font-['Inter']">
+        <div className="text-black font-extrabold text-5xl leading-tight tracking-wide inter-font">
           SUHAANI<br />NIGAM
         </div>
-        <div className="mt-4 text-black font-normal text-xl tracking-[0.25em] font-['Inter']">
+        <div className="mt-4 text-black font-normal text-xl tracking-[0.25em] inter-font">
           VISUAL DESIGNER
         </div>
       </div>
@@ -83,7 +82,7 @@ export default function HomePage() {
               ${shakingBubble === bubble.id ? 'animate-shake' : ''}
               `}
           >
-            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#A3FFB0] font-bold text-lg pointer-events-none font-['Inter']">
+            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#A3FFB0] font-bold text-lg pointer-events-none inter-font">
               tap
             </span>
           </div>
@@ -134,13 +133,13 @@ export default function HomePage() {
               bubbleContent
             )}
             <div
-              className={`absolute left-full top-1/2 -translate-y-1/2 ml-6 ${bubble.color} text-xl font-bold tracking-[9px] whitespace-nowrap transition-opacity duration-300 font-['Inter']`}
+              className={`absolute left-full top-1/2 -translate-y-1/2 ml-6 ${bubble.color} text-xl font-bold tracking-[9px] whitespace-nowrap transition-opacity duration-300 inter-font`}
               style={{
                 opacity: hoveredBubble === bubble.id ? 1 : 0,
                 pointerEvents: 'none'
               }}
             >
-              <span className="font-['Inter'] font-[500]">{bubble.label}</span>
+              <span className="inter-font font-[500]">{bubble.label}</span>
             </div>
           </div>
         );
