@@ -10,64 +10,194 @@ const MePage: React.FC = () => {
 
     return (
         <div className="w-screen h-screen relative bg-[#F2FFDA] overflow-hidden">
-            <div className="px-20 py-20 left-[-42px] top-[77px] absolute inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                <div className="w-[834.73px] h-[837.09px] relative blur-lg">
-                    <div data-angle="0" data-rotation-speed="Ultra-fast" className="w-96 h-96 left-[215.34px] top-0 absolute">
-                        <div data-type="1 corner" className="w-96 h-96 left-0 top-0 absolute">
-                            <div className="w-80 h-80 left-0 top-0 absolute bg-[#CAFF69] rounded-full"></div>
-                        </div>
+            <style>{`
+                @keyframes orbit1 {
+                    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+                    to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+                }
+                @keyframes orbit2 {
+                    from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+                    to { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+                }
+                @keyframes orbit3 {
+                    from { transform: rotate(45deg) translateX(180px) rotate(-45deg); }
+                    to { transform: rotate(405deg) translateX(180px) rotate(-405deg); }
+                }
+                @keyframes orbit4 {
+                    from { transform: rotate(90deg) translateX(220px) rotate(-90deg); }
+                    to { transform: rotate(450deg) translateX(220px) rotate(-450deg); }
+                }
+                @keyframes orbit5 {
+                    from { transform: rotate(180deg) translateX(160px) rotate(-180deg); }
+                    to { transform: rotate(540deg) translateX(160px) rotate(-540deg); }
+                }
+                @keyframes orbit6 {
+                    from { transform: rotate(270deg) translateX(190px) rotate(-270deg); }
+                    to { transform: rotate(630deg) translateX(190px) rotate(-630deg); }
+                }
+                @keyframes orbit7 {
+                    from { transform: rotate(135deg) translateX(210px) rotate(-135deg); }
+                    to { transform: rotate(495deg) translateX(210px) rotate(-495deg); }
+                }
+                @keyframes orbit8 {
+                    from { transform: rotate(225deg) translateX(170px) rotate(-225deg); }
+                    to { transform: rotate(585deg) translateX(170px) rotate(-585deg); }
+                }
+                @keyframes orbit9 {
+                    from { transform: rotate(315deg) translateX(140px) rotate(-315deg); }
+                    to { transform: rotate(675deg) translateX(140px) rotate(-675deg); }
+                }
+                @keyframes orbit10 {
+                    from { transform: rotate(60deg) translateX(230px) rotate(-60deg); }
+                    to { transform: rotate(420deg) translateX(230px) rotate(-420deg); }
+                }
+                @keyframes orbit11 {
+                    from { transform: rotate(150deg) translateX(195px) rotate(-150deg); }
+                    to { transform: rotate(510deg) translateX(195px) rotate(-510deg); }
+                }
+                @keyframes orbit12 {
+                    from { transform: rotate(210deg) translateX(165px) rotate(-210deg); }
+                    to { transform: rotate(570deg) translateX(165px) rotate(-570deg); }
+                }
+                @keyframes orbit13 {
+                    from { transform: rotate(30deg) translateX(175px) rotate(-30deg); }
+                    to { transform: rotate(390deg) translateX(175px) rotate(-390deg); }
+                }
+                @keyframes orbit14 {
+                    from { transform: rotate(120deg) translateX(205px) rotate(-120deg); }
+                    to { transform: rotate(480deg) translateX(205px) rotate(-480deg); }
+                }
+                @keyframes orbit15 {
+                    from { transform: rotate(240deg) translateX(185px) rotate(-240deg); }
+                    to { transform: rotate(600deg) translateX(185px) rotate(-600deg); }
+                }
+                @keyframes orbit16 {
+                    from { transform: rotate(300deg) translateX(155px) rotate(-300deg); }
+                    to { transform: rotate(660deg) translateX(155px) rotate(-660deg); }
+                }
+                @keyframes orbit17 {
+                    from { transform: rotate(75deg) translateX(215px) rotate(-75deg); }
+                    to { transform: rotate(435deg) translateX(215px) rotate(-435deg); }
+                }
+                .animate-orbit-1 { animation: orbit1 20s linear infinite; }
+                .animate-orbit-2 { animation: orbit2 25s linear infinite; }
+                .animate-orbit-3 { animation: orbit3 30s linear infinite; }
+                .animate-orbit-4 { animation: orbit4 22s linear infinite; }
+                .animate-orbit-5 { animation: orbit5 28s linear infinite; }
+                .animate-orbit-6 { animation: orbit6 18s linear infinite; }
+                .animate-orbit-7 { animation: orbit7 32s linear infinite; }
+                .animate-orbit-8 { animation: orbit8 35s linear infinite; }
+                .animate-orbit-9 { animation: orbit9 15s linear infinite; }
+                .animate-orbit-10 { animation: orbit10 38s linear infinite; }
+                .animate-orbit-11 { animation: orbit11 42s linear infinite; }
+                .animate-orbit-12 { animation: orbit12 36s linear infinite; }
+                .animate-orbit-13 { animation: orbit13 45s linear infinite; }
+                .animate-orbit-14 { animation: orbit14 40s linear infinite; }
+                .animate-orbit-15 { animation: orbit15 48s linear infinite; }
+                .animate-orbit-16 { animation: orbit16 33s linear infinite; }
+                .animate-orbit-17 { animation: orbit17 50s linear infinite; }
+            `}</style>
+
+            {/* Animated circles layer - positioned to match me.svg */}
+            <div className="w-[930.64px] h-[930.64px] left-[41.47px] top-[73px] absolute origin-top-left rotate-[5.58deg]">
+                <div className="w-full h-full relative blur-lg">
+                    {/* Center point for orbits - positioned at center of me.svg */}
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-1 w-80 h-80 bg-[#CAFF69] rounded-full"></div>
                     </div>
-                    <div data-angle="0" data-rotation-speed="Ultra-fast" className="w-96 h-96 left-[774.82px] top-[507.97px] absolute origin-top-left rotate-180">
-                        <div data-type="2 corners" className="w-96 h-96 left-0 top-0 absolute">
-                            <div className="w-80 h-80 left-[53.35px] top-0 absolute bg-[#CAFF69] rounded-full"></div>
-                            <div className="w-80 h-80 left-[0.04px] top-[53.31px] absolute bg-[#CAFF69] rounded-full"></div>
-                        </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-2 w-80 h-80 bg-[#CAFF69] rounded-full"></div>
                     </div>
-                    <div data-angle="0" data-rotation-speed="Ultra-fast" className="w-[473.63px] h-[473.63px] left-[128.05px] top-[363.45px] absolute">
-                        <div data-type="1 corner" className="w-[473.63px] h-[473.63px] left-0 top-0 absolute">
-                            <div className="w-96 h-96 left-0 top-0 absolute bg-[#CAFF69] rounded-full"></div>
-                        </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-3 w-96 h-96 bg-[#CAFF69] rounded-full"></div>
                     </div>
-                    <div data-angle="0" data-rotation-speed="Ultra-fast" className="w-[473.63px] h-[473.63px] left-[191.01px] top-[270.44px] absolute">
-                        <div data-type="1 corner" className="w-[473.63px] h-[473.63px] left-0 top-0 absolute">
-                            <div className="w-96 h-96 left-0 top-0 absolute bg-[#CAFF69] rounded-full"></div>
-                        </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-4 w-96 h-96 bg-[#CAFF69] rounded-full"></div>
                     </div>
-                    <div data-angle="0" data-rotation-speed="Ultra-fast" className="w-72 h-72 left-[203.72px] top-[85.85px] absolute origin-top-left rotate-[12.53deg]">
-                        <div data-type="1 corner" className="w-96 h-96 left-0 top-0 absolute">
-                            <div className="w-72 h-72 left-0 top-[41.26px] absolute bg-[#CAFF69] rounded-full"></div>
-                        </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-5 w-72 h-72 bg-[#CAFF69] rounded-full"></div>
                     </div>
-                    <div data-angle="0" data-rotation-speed="Ultra-fast" className="w-[535.66px] h-[509.21px] left-[571.22px] top-[595.42px] absolute origin-top-left rotate-[175.84deg]">
-                        <div data-type="1 corner" className="w-[571.22px] h-[546.76px] left-0 top-0 absolute">
-                            <div className="w-[489.62px] h-[468.65px] left-[81.60px] top-[72.55px] absolute bg-[#CAFF69] rounded-full"></div>
-                        </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-6 w-[400px] h-[400px] bg-[#CAFF69] rounded-full"></div>
                     </div>
-                    <div data-angle="0" data-rotation-speed="Ultra-fast" className="w-96 h-96 left-[642.22px] top-[243.25px] absolute origin-top-left rotate-[58.82deg]">
-                        <div data-type="1 corner" className="w-[494.90px] h-[501.11px] left-0 top-0 absolute">
-                            <div className="w-96 h-96 left-0 top-[26.14px] absolute bg-[#CAFF69] rounded-full"></div>
-                        </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-7 w-96 h-96 bg-[#CAFF69] rounded-full"></div>
                     </div>
-                    <div className="w-96 h-96 left-[229.65px] top-[123.06px] absolute bg-[#CAFF69] rounded-full"></div>
-                    <div className="w-56 h-56 left-[118.04px] top-[389.21px] absolute bg-[#CAFF69] rounded-full"></div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-8 w-56 h-56 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-9 w-72 h-72 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-10 w-80 h-80 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-11 w-72 h-72 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-12 w-64 h-64 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-13 w-88 h-88 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-14 w-96 h-96 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-15 w-68 h-68 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-16 w-60 h-60 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    <div className="w-full h-full absolute flex items-center justify-center">
+                        <div className="animate-orbit-17 w-84 h-84 bg-[#CAFF69] rounded-full"></div>
+                    </div>
+                    
+                    {/* Animated static circles with subtle float effect */}
+                    <div className="w-64 h-64 left-[100px] top-[150px] absolute bg-[#CAFF69] rounded-full animate-pulse"></div>
+                    <div className="w-48 h-48 left-[600px] top-[500px] absolute bg-[#CAFF69] rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="w-56 h-56 left-[300px] top-[600px] absolute bg-[#CAFF69] rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
                 </div>
             </div>
-            <img className="w-[930.64px] h-[930.64px] left-[41.47px] top-[73px] absolute origin-top-left rotate-[5.58deg]" src="/assets/me.svg" />
+
+            {/* me.svg on top of the animated circles */}
+            <img className="w-[930.64px] h-[930.64px] left-[41.47px] top-[73px] absolute origin-top-left rotate-[5.58deg]" src="/assets/me.svg" alt="Profile illustration" />
+            
             <div className="w-[862px] left-[858px] top-[392px] absolute text-justify justify-start text-zinc-950 text-2xl font-extralight font-['Inter']">
-                I’m a Visual Designer with 2+ years of experience, always curious about how design can tell stories and spark emotions. I explore different mediums, experiment with colors, and constantly try new ways of bringing ideas to life. For me, design isn’t just about making things look good, it’s about making them feel good.<br/><br/>I love creating work that carries a sense of playfulness with purpose. Sometimes that looks like nostalgic illustrations, sometimes it’s bold layouts or quirky stickers, and other times it’s just me scribbling in a sketchbook until something clicks. I believe design should invite people in, make them smile, and leave a little memory behind.<br/><br/>I design cool stuff &lt;3
+                I'm a Visual Designer with 2+ years of experience, always curious about how design can tell stories and spark emotions. I explore different mediums, experiment with colors, and constantly try new ways of bringing ideas to life. For me, design isn't just about making things look good, it's about making them feel good.<br/><br/>I love creating work that carries a sense of playfulness with purpose. Sometimes that looks like nostalgic illustrations, sometimes it's bold layouts or quirky stickers, and other times it's just me scribbling in a sketchbook until something clicks. I believe design should invite people in, make them smile, and leave a little memory behind.<br/><br/>I design cool stuff &lt;3
             </div>
-            <a className="w-28 left-[858px] top-[912px] absolute text-justify justify-start text-zinc-950 text-2xl font-medium font-['Inter']" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank">GMAIL</a>
-            <a className="w-32 left-[1079px] top-[912px] absolute text-justify justify-start text-zinc-950 text-2xl font-medium font-['Inter']" href="https://www.behance.net/suhaaninigam" target="_blank">BEHANCE</a>
-            <a className="w-32 left-[1326px] top-[912px] absolute text-justify justify-start text-zinc-950 text-2xl font-medium font-['Inter']" href="https://www.linkedin.com/in/suhaaninigam/" target="_blank">LINKEDIN</a>
-            <a className="w-36 left-[1572px] top-[912px] absolute text-justify justify-start text-zinc-950 text-2xl font-medium font-['Inter']" href="https://www.instagram.com/suhaani.ii/" target="_blank">INSTAGRAM</a>
-            <a className="left-[851px] top-[219px] absolute text-justify justify-start text-zinc-950 text-5xl font-extrabold font-['Inter'] uppercase tracking-[22.50px]">Hi    I’m    Suhaani</a>
+            
+            <a className="w-28 left-[858px] top-[912px] absolute text-justify justify-start text-zinc-950 text-2xl font-medium font-['Inter']" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">GMAIL</a>
+            <a className="w-32 left-[1079px] top-[912px] absolute text-justify justify-start text-zinc-950 text-2xl font-medium font-['Inter']" href="https://www.behance.net/suhaaninigam" target="_blank" rel="noopener noreferrer">BEHANCE</a>
+            <a className="w-32 left-[1326px] top-[912px] absolute text-justify justify-start text-zinc-950 text-2xl font-medium font-['Inter']" href="https://www.linkedin.com/in/suhaaninigam/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+            <a className="w-36 left-[1572px] top-[912px] absolute text-justify justify-start text-zinc-950 text-2xl font-medium font-['Inter']" href="https://www.instagram.com/suhaani.ii/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+            
+            <a className="left-[851px] top-[219px] absolute text-justify justify-start text-zinc-950 text-5xl font-extrabold font-['Inter'] uppercase tracking-[22.50px]">Hi    I'm    Suhaani</a>
+            
             <button
                 className="focus:outline-none"
                 onClick={() => setShowHomePage(true)}
                 style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                 aria-label="Go to HomePage"
             >
-                <img className="w-16 h-14 left-[926px] top-[46px] absolute" src="/assets/cat.svg" />
+                <img className="w-16 h-14 left-[926px] top-[46px] absolute" src="/assets/cat.svg" alt="Cat icon" />
             </button>
         </div>
     );
