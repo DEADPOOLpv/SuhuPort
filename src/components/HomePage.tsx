@@ -1,16 +1,20 @@
 import { useState } from 'react';
-import MePage from './MePage'; // Import your MePage component
+import MePage from './MePage';
+// Dummy components for demonstration
+const QuestPage = () => <div className="w-full h-full flex items-center justify-center text-5xl">Quest Page</div>;
+const ProjectsPage = () => <div className="w-full h-full flex items-center justify-center text-5xl">Projects Page</div>;
 
 export default function HomePage() {
   const [hoveredBubble, setHoveredBubble] = useState<number | null>(null);
   const [shakingBubble, setShakingBubble] = useState<number | null>(null);
-  const [showMePage, setShowMePage] = useState(false); // State to show MePage
+  const [showMePage, setShowMePage] = useState(false);
+  const [showQuest, setShowQuest] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
 
-  // Rotated triangle: top-right, bottom, top-left (clockwise)
   const bubbles = [
-    { id: 1, label: 'RESUME', color: 'text-[#51B6E3]', bg: 'bg-[#51B6E3]', top: '60px', left: '51%' },    // Top right
-    { id: 3, label: 'QUEST', color: 'text-[#DE7599]', bg: 'bg-[#DE7599]', top: '200px', left: '51%' }, // Bottom center
-    { id: 2, label: 'PROJECTS', color: 'text-[#E4B176]', bg: 'bg-[#E4B176]', top: '130px', left: '44%' }      // Top left
+    { id: 1, label: 'RESUME', color: 'text-[#0026FF]', bg: 'bg-[#0026FF]', top: '60px', left: '51%' },
+    { id: 3, label: 'QUEST', color: 'text-[#CF0067]', bg: 'bg-[#CF0067]', top: '200px', left: '51%' },
+    { id: 2, label: 'PROJECTS', color: 'text-[#FF712F]', bg: 'bg-[#FF712F]', top: '130px', left: '44%' }
   ];
 
   const handleMouseEnter = (id: number) => {
@@ -26,77 +30,129 @@ export default function HomePage() {
     setShakingBubble(null);
   };
 
-  if (showMePage) {
-    return <MePage />;
-  }
+  if (showMePage) return <MePage />;
+  if (showQuest) return <QuestPage />;
+  if (showProjects) return <ProjectsPage />;
 
   return (
-    <div className="w-full h-screen relative bg-[#CAFF69] overflow-hidden">
-      {/* Character Image with Hyperlink - Behind bubbles */}
-      <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/4 z-0">
-        <button
-          className="focus:outline-none"
-          onClick={() => setShowMePage(true)}
-          style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
-          aria-label="Go to MePage"
-        >
-          <img 
-            src="/assets/floatingLady.png" 
-            alt="Floating Lady" 
-            className="w-auto h-[900px] object-contain animate-[bounce_6s_ease-in-out_infinite] opacity-90"
-          />
-        </button>
+    <div className="w-[1920px] h-[1080px] relative bg-[#CAFF69] overflow-hidden">
+      {/* Name and Title */}
+      <div className="absolute left-[220px] top-[370px] z-10 text-left">
+        <div className="text-black font-extrabold text-5xl leading-tight tracking-wide font-['Inter']">
+          SUHAANI<br />NIGAM
+        </div>
+        <div className="mt-4 text-black font-normal text-xl tracking-[0.25em] font-['Inter']">
+          VISUAL DESIGNER
+        </div>
       </div>
 
-      {/* Floating Bubbles in Rotated Triangle */}
-      {bubbles.map((bubble) => (
-        <div
-          key={bubble.id}
-          className="absolute flex items-center cursor-pointer group z-10"
-          style={{
-            top: bubble.top,
-            left: bubble.left,
-            transform: 'translateX(-50%)'
-          }}
-          onMouseEnter={() => handleMouseEnter(bubble.id)}
-          onMouseLeave={handleMouseLeave}
-        >
-          {/* Bubble */}
-          <div 
+      {/* Floating Lady Illustration as hyperlink with animation */}
+      <button
+        className="absolute left-[60%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer"
+        onClick={() => setShowMePage(true)}
+        aria-label="About Me"
+        style={{ outline: 'none' }}
+      >
+        <img
+          src="assets/floatingLady.png"
+          alt="Floating Lady"
+          className="h-[750px] w-auto animate-[bounce_6s_ease-in-out_infinite]"
+          style={{ filter: 'drop-shadow(0 0 8px #0002)' }}
+        />
+      </button>
+
+      {/* About Me Button */}
+      <button
+        className="absolute left-[78%] top-1/2 -translate-y-1/2 z-10 bg-[#CF0067] text-white animate-[bounce_6s_ease-in-out_infinite] font-bold text-lg px-6 py-2 rounded-lg shadow-lg transition-transform hover:scale-105"
+        onClick={() => setShowMePage(true)}
+        aria-label="About Me"
+      >
+        About Me
+      </button>
+
+      {/* Floating Bubbles in Rotated Triangle (with animation and tap text) */}
+      {bubbles.map((bubble) => {
+        const isResume = bubble.label === 'RESUME';
+        const isQuest = bubble.label === 'QUEST';
+        const isProjects = bubble.label === 'PROJECTS';
+
+        const bubbleContent = (
+          <div
             className={`w-20 h-20 rounded-full transition-all duration-300 hover:scale-110 relative flex items-center justify-center
               ${hoveredBubble === bubble.id ? bubble.bg : 'bg-white'}
               ${shakingBubble === bubble.id ? 'animate-shake' : ''}
               `}
-          />
-
-          {/* Text Label - Only visible on hover, absolutely positioned to right of bubble */}
-          <div 
-            className={`absolute left-full top-1/2 -translate-y-1/2 ml-6 ${bubble.color} text-xl font-bold font-['Inter'] tracking-[9px] whitespace-nowrap transition-opacity duration-300`}
-            style={{
-              opacity: hoveredBubble === bubble.id ? 1 : 0,
-              pointerEvents: 'none'
-            }}
           >
-            {bubble.label}
+            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#A3FFB0] font-bold text-lg pointer-events-none font-['Inter']">
+              tap
+            </span>
           </div>
-        </div>
-      ))}
+        );
+
+        // Resume is a link, others are buttons
+        return (
+          <div
+            key={bubble.id}
+            className="absolute flex items-center cursor-pointer group z-10"
+            style={{
+              top: bubble.top,
+              left: bubble.left,
+              transform: 'translateX(-50%)'
+            }}
+            onMouseEnter={() => handleMouseEnter(bubble.id)}
+            onMouseLeave={handleMouseLeave}
+          >
+            {isResume ? (
+              <a
+                href="https://www.notion.so/Suhaani-Nigam-281906501a6180bf89f9e2394077fccb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                aria-label="Open Resume"
+              >
+                {bubbleContent}
+              </a>
+            ) : isQuest ? (
+              <button
+                className="block bg-transparent border-none p-0 m-0 cursor-pointer"
+                onClick={() => setShowQuest(true)}
+                aria-label="Open Quest"
+                style={{ outline: 'none' }}
+              >
+                {bubbleContent}
+              </button>
+            ) : isProjects ? (
+              <button
+                className="block bg-transparent border-none p-0 m-0 cursor-pointer"
+                onClick={() => setShowProjects(true)}
+                aria-label="Open Projects"
+                style={{ outline: 'none' }}
+              >
+                {bubbleContent}
+              </button>
+            ) : (
+              bubbleContent
+            )}
+            <div
+              className={`absolute left-full top-1/2 -translate-y-1/2 ml-6 ${bubble.color} text-xl font-bold tracking-[9px] whitespace-nowrap transition-opacity duration-300 font-['Inter']`}
+              style={{
+                opacity: hoveredBubble === bubble.id ? 1 : 0,
+                pointerEvents: 'none'
+              }}
+            >
+              <span className="font-['Inter'] font-[500]">{bubble.label}</span>
+            </div>
+          </div>
+        );
+      })}
 
       <style>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
         @keyframes bounce {
           0%, 100% {
             transform: translateY(0px);
           }
           50% {
-            transform: translateY(-50px); /* reduced bounce height */
+            transform: translateY(-50px);
           }
         }
         @keyframes shake {
