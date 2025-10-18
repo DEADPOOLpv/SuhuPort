@@ -36,7 +36,7 @@ export default function HomePage() {
   return (
     <div className="w-screen h-screen relative bg-[#CAFF69] overflow-hidden">
       {/* Name and Title */}
-      <div className="absolute left-[220px] top-[370px] z-10 text-left">
+      <div className="absolute left-[220px] top-[480px] z-10 text-left">
         <div className="text-black font-extrabold text-5xl leading-tight tracking-wide inter-font">
           SUHAANI<br />NIGAM
         </div>
@@ -47,7 +47,7 @@ export default function HomePage() {
 
       {/* Floating Lady Illustration as hyperlink with animation */}
       <button
-        className="absolute left-[60%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer"
+        className="absolute left-[60%] top-[600px] -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer"
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
         style={{ outline: 'none' }}
@@ -55,14 +55,14 @@ export default function HomePage() {
         <img
           src="assets/floatingLady.png"
           alt="Floating Lady"
-          className="h-[750px] w-auto animate-[bounce_6s_ease-in-out_infinite]"
+          className="h-[750px] w-auto animate-[bounce_5s_ease-in-out_infinite]"
           style={{ filter: 'drop-shadow(0 0 8px #0002)' }}
         />
       </button>
 
       {/* About Me Button */}
       <button
-        className="absolute left-[78%] top-1/2 -translate-y-1/2 z-10 bg-[#CF0067] text-white animate-[bounce_6s_ease-in-out_infinite] font-bold text-lg px-6 py-2 rounded-lg shadow-lg transition-transform hover:scale-105"
+        className="absolute left-[78%] top-[620px] -translate-y-1/2 z-10 bg-[#CF0067] text-white animate-[bounce_5s_ease-in-out_infinite] font-bold text-lg px-6 py-2 rounded-lg shadow-lg transition-transform hover:scale-105"
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
       >
