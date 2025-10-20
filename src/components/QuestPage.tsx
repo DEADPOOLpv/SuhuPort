@@ -19,8 +19,8 @@ const QuestPage: React.FC = () => {
 
     return (
         <body className="w-screen h-screen relative">
-            <img className="w-[1920px] h-[1087px] left-0 top-[-7px] absolute" src="/assets/windowsBg.png" />
-            <img className="w-[1920px] h-12 top-[962px] absolute" src="/assets/windowsTaskbar.svg" />
+            <img className="w-screen h-screen left-0 absolute" src="/assets/windowsBg.png" />
+            <img className="bottom-0 absolute" src="/assets/windowsTaskbar.svg" />
             <img className="w-20 h-20 left-[56px] top-[401px] absolute" src="/assets/windowsBin.png" />
             <img className="w-20 h-20 left-[817px] top-[862px] absolute" src="/assets/windowsExplorer.png" />
             <img className="w-20 h-20 left-[1600px] top-[127px] absolute" src="/assets/windowsDialup.png" />
@@ -76,7 +76,7 @@ const QuestPage: React.FC = () => {
 
             {/* Home Button */}
             <button
-                className="absolute flex flex-col items-center left-[886px] top-[44px] focus:outline-none bg-transparent cursor-pointer"
+                className="absolute flex flex-col items-center inset-x-0 top-[44px] focus:outline-none bg-transparent cursor-pointer"
                 onClick={handleHomeClick}
             >
                 <img className="w-16 h-14" src="/assets/cat.svg" alt="home" />
