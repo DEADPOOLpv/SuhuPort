@@ -1,20 +1,13 @@
-import './App.css'
-import HomePage from './components/HomePage'
-import LoadingPage from './components/LoadingPage'
-import { useState } from 'react'
+import { useState } from 'react';
+import LoadingPage from './components/LoadingPage';
+import HomePage from './components/HomePage';
 
-function App() {
-  const [showHome, setShowHome] = useState(false);
+export default function App() {
+  const [showHomePage, setShowHomePage] = useState(false);
 
-  return (
-    <>
-      {!showHome ? (
-        <LoadingPage onImageClick={() => setShowHome(true)} />
-      ) : (
-        <HomePage />
-      )}
-    </>
-  )
+  return showHomePage ? (
+    <HomePage />
+  ) : (
+    <LoadingPage onComplete={() => setShowHomePage(true)} />
+  );
 }
-
-export default App
