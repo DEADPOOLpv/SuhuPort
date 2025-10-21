@@ -22,11 +22,11 @@ const QuestPage: React.FC = () => {
             <img className="w-screen h-screen left-0 absolute" src="/assets/windowsBg.png" />
             <img className="bottom-0 absolute" src="/assets/windowsTaskbar.svg" />
             <img className="w-20 h-20 left-[56px] top-[401px] absolute" src="/assets/windowsBin.png" />
-            <img className="w-20 h-20 left-[817px] top-[862px] absolute" src="/assets/windowsExplorer.png" />
+            <img className="w-20 h-20 left-[817px] top-[800px] absolute" src="/assets/windowsExplorer.png" />
             <img className="w-20 h-20 left-[1600px] top-[127px] absolute" src="/assets/windowsDialup.png" />
             <img className="w-20 h-20 left-[1660px] top-[643px] absolute" src="/assets/windowsFax.png" />
             <img className="w-20 h-20 left-[197px] top-[98px] absolute" src="/assets/windowsWeb.png" />
-            <img className="w-20 h-20 left-[1444px] top-[820px] absolute" src="/assets/windowsDisk.png" />
+            <img className="w-20 h-20 left-[1444px] top-[810px] absolute" src="/assets/windowsDisk.png" />
             <img className="w-20 h-20 left-[272px] top-[733px] absolute" src="/assets/windowsDvd.png" />
 
             {/* Stickers Button */}
