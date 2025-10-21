@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 interface LoadingPageProps {
-  onImageClick?: () => void;
+  onComplete?: () => void;
 }
 
-const LoadingPage: React.FC<LoadingPageProps> = ({ onImageClick }) => {
+const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
   const [zoomed, setZoomed] = useState(false);
   const [isWinking, setIsWinking] = useState(false);
+  
 
-  // Automatically: wink -> wait 300ms -> zoom -> notify parent (load HomePage)
   useEffect(() => {
     let returnTimer: ReturnType<typeof setTimeout>;
     let zoomDelayTimer: ReturnType<typeof setTimeout>;
@@ -20,17 +20,15 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onImageClick }) => {
       returnTimer = setTimeout(() => {
         setIsWinking(false);
 
-        // Wait 300ms after wink before starting zoom
         zoomDelayTimer = setTimeout(() => {
           setZoomed(true);
 
-          // After zoom transition, call parent callback to load HomePage
           zoomTimer = setTimeout(() => {
-            if (onImageClick) onImageClick();
-          }, 700); // matches transition duration
-        }, 400); // 300ms delay before zoom starts
+            if (onComplete) onComplete(); // <-- notify parent to load HomePage
+          }, 700); // matches zoom transition
+        }, 300); // delay after wink before zoom (adjust as needed)
       }, 400); // wink duration
-    }, 800); // start wink after page load
+    }, 800);
 
     return () => {
       clearTimeout(winkTimer);
@@ -38,7 +36,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onImageClick }) => {
       clearTimeout(zoomDelayTimer);
       clearTimeout(zoomTimer);
     };
-  }, [onImageClick]);
+  }, [onComplete]);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-lime-50 relative overflow-hidden" aria-busy={isWinking ? 'true' : 'false'}>
