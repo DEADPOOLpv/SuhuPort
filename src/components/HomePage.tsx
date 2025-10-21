@@ -11,9 +11,9 @@ export default function HomePage() {
   const [showProjects, setShowProjects] = useState(false);
 
   const bubbles = [
-    { id: 1, label: 'RESUME', color: 'text-[#0026FF]', bg: 'bg-[#0026FF]', top: '60px', left: '51%' },
-    { id: 3, label: 'QUEST', color: 'text-[#CF0067]', bg: 'bg-[#CF0067]', top: '200px', left: '51%' },
-    { id: 2, label: 'PROJECTS', color: 'text-[#FF712F]', bg: 'bg-[#FF712F]', top: '130px', left: '44%' }
+    { id: 1, label: 'RESUME', color: 'text-[#0026FF]', bg: 'bg-[#0026FF]', top: '3.75rem', left: '51%' },   // 60px -> 3.75rem
+    { id: 3, label: 'QUEST', color: 'text-[#CF0067]', bg: 'bg-[#CF0067]', top: '12.5rem', left: '51%' },    // 200px -> 12.5rem
+    { id: 2, label: 'PROJECTS', color: 'text-[#FF712F]', bg: 'bg-[#FF712F]', top: '8.125rem', left: '44%' } // 130px -> 8.125rem
   ];
 
   const handleMouseEnter = (id: number) => {
@@ -36,7 +36,7 @@ export default function HomePage() {
   return (
     <div className="w-screen h-screen relative bg-[#CAFF69] overflow-hidden">
       {/* Name and Title */}
-      <div className="absolute left-[220px] top-[480px] z-10 text-left">
+      <div className="absolute left-[13.75rem] top-[30rem] z-10 text-left"> {/* 220px -> 13.75rem, 480px -> 30rem */}
         <div className="text-black font-extrabold text-5xl leading-tight tracking-wide inter-font">
           SUHAANI<br />NIGAM
         </div>
@@ -47,7 +47,7 @@ export default function HomePage() {
 
       {/* Floating Lady Illustration as hyperlink with animation */}
       <button
-        className="absolute left-[60%] top-[600px] -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer"
+        className="absolute left-[60%] top-[37.5rem] -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer" /* 600px -> 37.5rem */
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
         style={{ outline: 'none' }}
@@ -55,14 +55,14 @@ export default function HomePage() {
         <img
           src="assets/floatingLady.png"
           alt="Floating Lady"
-          className="h-[750px] w-auto animate-[bounce_5s_ease-in-out_infinite]"
+          className="h-[46.875rem] w-auto animate-[bounce_5s_ease-in-out_infinite]" /* 750px -> 46.875rem */
           style={{ filter: 'drop-shadow(0 0 8px #0002)' }}
         />
       </button>
 
       {/* About Me Button */}
       <button
-        className="absolute left-[78%] top-[620px] -translate-y-1/2 z-10 bg-[#CF0067] text-white animate-[bounce_5s_ease-in-out_infinite] font-bold text-lg px-6 py-2 rounded-lg shadow-lg transition-transform hover:scale-105"
+        className="absolute left-[78%] top-[38.75rem] -translate-y-1/2 z-10 bg-[#CF0067] text-white animate-[bounce_5s_ease-in-out_infinite] font-bold text-lg px-6 py-2 rounded-lg shadow-lg transition-transform hover:scale-105" /* 620px -> 38.75rem */
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
       >
@@ -148,23 +148,23 @@ export default function HomePage() {
       <style>{`
         @keyframes bounce {
           0%, 100% {
-            transform: translateY(0px);
+            transform: translateY(0rem);
           }
           50% {
-            transform: translateY(-50px);
+            transform: translateY(-3.125rem); /* -50px -> -3.125rem */
           }
         }
         @keyframes shake {
           0% { transform: translateX(0); }
-          10% { transform: translateX(-5px); }
-          20% { transform: translateX(5px); }
-          30% { transform: translateX(-5px); }
-          40% { transform: translateX(5px); }
-          50% { transform: translateX(-5px); }
-          60% { transform: translateX(5px); }
-          70% { transform: translateX(-5px); }
-          80% { transform: translateX(5px); }
-          90% { transform: translateX(-5px); }
+          10% { transform: translateX(-0.3125rem); } /* -5px -> -0.3125rem */
+          20% { transform: translateX(0.3125rem); }  /* 5px -> 0.3125rem */
+          30% { transform: translateX(-0.3125rem); }
+          40% { transform: translateX(0.3125rem); }
+          50% { transform: translateX(-0.3125rem); }
+          60% { transform: translateX(0.3125rem); }
+          70% { transform: translateX(-0.3125rem); }
+          80% { transform: translateX(0.3125rem); }
+          90% { transform: translateX(-0.3125rem); }
           100% { transform: translateX(0); }
         }
         .animate-shake {

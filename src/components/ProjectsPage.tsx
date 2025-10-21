@@ -22,12 +22,12 @@ const ProjectsPage: React.FC = () => {
                 </div>
             </button>
             
-      <div className="relative w-full h-[calc(100vh-100px)]">
+      <div className="relative w-full h-[calc(100vh-6.25rem)]">
   
         {/* SponsHub Card - Top Left */}
         <a
           className="absolute top-[5%] left-[10%] transform transition-transform duration-300 ease-out hover:-translate-y-6 hover:scale-110 hover:rotate-[-6deg] hover:z-40"
-          style={{ filter: 'drop-shadow(0 18px 40px rgba(0,0,0,0.18))' }}
+          style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
           href='https://www.behance.net/gallery/195306957/Jamboree'
           target="_blank"
           rel="noreferrer"
@@ -42,7 +42,7 @@ const ProjectsPage: React.FC = () => {
         {/* Valorant Card - Top Right */}
         <a
           className="absolute top-[8%] right-[10%] transform transition-transform duration-300 ease-out hover:-translate-y-8 hover:scale-112 hover:rotate-[5deg] z-40"
-          style={{ filter: 'drop-shadow(0 18px 40px rgba(0,0,0,0.18))' }}
+          style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
           href='https://www.behance.net/gallery/186682645/Valorant-Concept-Art'
           target="_blank"
           rel="noreferrer"
@@ -57,7 +57,7 @@ const ProjectsPage: React.FC = () => {
         {/* Oshi Beauty Card - Middle Left */}
         <a
           className="absolute top-[40%] left-[5%] transform transition-transform duration-300 ease-out hover:-translate-y-6 hover:scale-110 hover:rotate-[-3deg] hover:z-40"
-          style={{ filter: 'drop-shadow(0 18px 40px rgba(0,0,0,0.18))' }}
+          style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
           href='https://www.behance.net/gallery/235881141/Qshi-Studio'
           target="_blank"
           rel="noreferrer"
@@ -72,7 +72,7 @@ const ProjectsPage: React.FC = () => {
         {/* Coming Soon Card 1 - Bottom Center */}
         <div 
           className="absolute bottom-[1%] left-[34%]"
-          style={{ filter: 'drop-shadow(0 18px 40px rgba(0,0,0,0.18))' }}
+          style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
         >
           <img 
             src="/assets/comingsoon.png" 
@@ -84,7 +84,7 @@ const ProjectsPage: React.FC = () => {
         {/* Coming Soon Card 2 - Right */}
         <div 
           className="absolute top-[50%] right-[6%]"
-          style={{ filter: 'drop-shadow(0 18px 40px rgba(0,0,0,0.18))' }}
+          style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
         >
           <img 
             src="/assets/comingsoons.png" 

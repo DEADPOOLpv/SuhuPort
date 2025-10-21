@@ -12,72 +12,72 @@ const MePage: React.FC = () => {
         <div className="w-screen h-screen relative bg-[#F2FFDA] overflow-hidden">
             <style>{`
                 @keyframes orbit1 {
-                    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-                    to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+                    from { transform: rotate(0deg) translateX(9.375rem) rotate(0deg); }
+                    to { transform: rotate(360deg) translateX(9.375rem) rotate(-360deg); }
                 }
                 @keyframes orbit2 {
-                    from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-                    to { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+                    from { transform: rotate(0deg) translateX(12.5rem) rotate(0deg); }
+                    to { transform: rotate(360deg) translateX(12.5rem) rotate(-360deg); }
                 }
                 @keyframes orbit3 {
-                    from { transform: rotate(45deg) translateX(180px) rotate(-45deg); }
-                    to { transform: rotate(405deg) translateX(180px) rotate(-405deg); }
+                    from { transform: rotate(45deg) translateX(11.25rem) rotate(-45deg); }
+                    to { transform: rotate(405deg) translateX(11.25rem) rotate(-405deg); }
                 }
                 @keyframes orbit4 {
-                    from { transform: rotate(90deg) translateX(220px) rotate(-90deg); }
-                    to { transform: rotate(450deg) translateX(220px) rotate(-450deg); }
+                    from { transform: rotate(90deg) translateX(13.75rem) rotate(-90deg); }
+                    to { transform: rotate(450deg) translateX(13.75rem) rotate(-450deg); }
                 }
                 @keyframes orbit5 {
-                    from { transform: rotate(180deg) translateX(160px) rotate(-180deg); }
-                    to { transform: rotate(540deg) translateX(160px) rotate(-540deg); }
+                    from { transform: rotate(180deg) translateX(10rem) rotate(-180deg); }
+                    to { transform: rotate(540deg) translateX(10rem) rotate(-540deg); }
                 }
                 @keyframes orbit6 {
-                    from { transform: rotate(270deg) translateX(190px) rotate(-270deg); }
-                    to { transform: rotate(630deg) translateX(190px) rotate(-630deg); }
+                    from { transform: rotate(270deg) translateX(11.875rem) rotate(-270deg); }
+                    to { transform: rotate(630deg) translateX(11.875rem) rotate(-630deg); }
                 }
                 @keyframes orbit7 {
-                    from { transform: rotate(135deg) translateX(210px) rotate(-135deg); }
-                    to { transform: rotate(495deg) translateX(210px) rotate(-495deg); }
+                    from { transform: rotate(135deg) translateX(13.125rem) rotate(-135deg); }
+                    to { transform: rotate(495deg) translateX(13.125rem) rotate(-495deg); }
                 }
                 @keyframes orbit8 {
-                    from { transform: rotate(225deg) translateX(170px) rotate(-225deg); }
-                    to { transform: rotate(585deg) translateX(170px) rotate(-585deg); }
+                    from { transform: rotate(225deg) translateX(10.625rem) rotate(-225deg); }
+                    to { transform: rotate(585deg) translateX(10.625rem) rotate(-585deg); }
                 }
                 @keyframes orbit9 {
-                    from { transform: rotate(315deg) translateX(140px) rotate(-315deg); }
-                    to { transform: rotate(675deg) translateX(140px) rotate(-675deg); }
+                    from { transform: rotate(315deg) translateX(8.75rem) rotate(-315deg); }
+                    to { transform: rotate(675deg) translateX(8.75rem) rotate(-675deg); }
                 }
                 @keyframes orbit10 {
-                    from { transform: rotate(60deg) translateX(230px) rotate(-60deg); }
-                    to { transform: rotate(420deg) translateX(230px) rotate(-420deg); }
+                    from { transform: rotate(60deg) translateX(14.375rem) rotate(-60deg); }
+                    to { transform: rotate(420deg) translateX(14.375rem) rotate(-420deg); }
                 }
                 @keyframes orbit11 {
-                    from { transform: rotate(150deg) translateX(195px) rotate(-150deg); }
-                    to { transform: rotate(510deg) translateX(195px) rotate(-510deg); }
+                    from { transform: rotate(150deg) translateX(12.1875rem) rotate(-150deg); }
+                    to { transform: rotate(510deg) translateX(12.1875rem) rotate(-510deg); }
                 }
                 @keyframes orbit12 {
-                    from { transform: rotate(210deg) translateX(165px) rotate(-210deg); }
-                    to { transform: rotate(570deg) translateX(165px) rotate(-570deg); }
+                    from { transform: rotate(210deg) translateX(10.3125rem) rotate(-210deg); }
+                    to { transform: rotate(570deg) translateX(10.3125rem) rotate(-570deg); }
                 }
                 @keyframes orbit13 {
-                    from { transform: rotate(30deg) translateX(175px) rotate(-30deg); }
-                    to { transform: rotate(390deg) translateX(175px) rotate(-390deg); }
+                    from { transform: rotate(30deg) translateX(10.9375rem) rotate(-30deg); }
+                    to { transform: rotate(390deg) translateX(10.9375rem) rotate(-390deg); }
                 }
                 @keyframes orbit14 {
-                    from { transform: rotate(120deg) translateX(205px) rotate(-120deg); }
-                    to { transform: rotate(480deg) translateX(205px) rotate(-480deg); }
+                    from { transform: rotate(120deg) translateX(12.8125rem) rotate(-120deg); }
+                    to { transform: rotate(480deg) translateX(12.8125rem) rotate(-480deg); }
                 }
                 @keyframes orbit15 {
-                    from { transform: rotate(240deg) translateX(185px) rotate(-240deg); }
-                    to { transform: rotate(600deg) translateX(185px) rotate(-600deg); }
+                    from { transform: rotate(240deg) translateX(11.5625rem) rotate(-240deg); }
+                    to { transform: rotate(600deg) translateX(11.5625rem) rotate(-600deg); }
                 }
                 @keyframes orbit16 {
-                    from { transform: rotate(300deg) translateX(155px) rotate(-300deg); }
-                    to { transform: rotate(660deg) translateX(155px) rotate(-660deg); }
+                    from { transform: rotate(300deg) translateX(9.6875rem) rotate(-300deg); }
+                    to { transform: rotate(660deg) translateX(9.6875rem) rotate(-660deg); }
                 }
                 @keyframes orbit17 {
-                    from { transform: rotate(75deg) translateX(215px) rotate(-75deg); }
-                    to { transform: rotate(435deg) translateX(215px) rotate(-435deg); }
+                    from { transform: rotate(75deg) translateX(13.4375rem) rotate(-75deg); }
+                    to { transform: rotate(435deg) translateX(13.4375rem) rotate(-435deg); }
                 }
                 .animate-orbit-1 { animation: orbit1 30s linear infinite; }
                 .animate-orbit-2 { animation: orbit2 35s linear infinite; }
@@ -99,7 +99,7 @@ const MePage: React.FC = () => {
             `}</style>
 
             {/* Animated circles layer - positioned to match me.svg */}
-            <div className="w-[930.64px] h-[930.64px] left-[41.47px] top-[73px] absolute origin-top-left rotate-[5.58deg]">
+            <div className="w-[58.165rem] h-[58.165rem] left-[2.591875rem] top-[4.5625rem] absolute origin-top-left rotate-[5.58deg]">
                 <div className="w-full h-full relative blur-lg">
                     {/* Center point for orbits - positioned at center of me.svg */}
                     <div className="w-full h-full absolute flex items-center justify-center">
@@ -123,7 +123,7 @@ const MePage: React.FC = () => {
                     </div>
                     
                     <div className="w-full h-full absolute flex items-center justify-center">
-                        <div className="animate-orbit-6 w-[400px] h-[400px] bg-[#CAFF69] rounded-full"></div>
+                        <div className="animate-orbit-6 w-[25rem] h-[25rem] bg-[#CAFF69] rounded-full"></div>
                     </div>
                     
                     <div className="w-full h-full absolute flex items-center justify-center">
@@ -171,25 +171,25 @@ const MePage: React.FC = () => {
                     </div>
                     
                     {/* Animated static circles with subtle float effect */}
-                    <div className="w-64 h-64 left-[100px] top-[150px] absolute bg-[#CAFF69] rounded-full animate-pulse"></div>
-                    <div className="w-48 h-48 left-[600px] top-[500px] absolute bg-[#CAFF69] rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                    <div className="w-56 h-56 left-[300px] top-[600px] absolute bg-[#CAFF69] rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                    <div className="w-64 h-64 left-[6.25rem] top-[9.375rem] absolute bg-[#CAFF69] rounded-full animate-pulse"></div>
+                    <div className="w-48 h-48 left-[37.5rem] top-[31.25rem] absolute bg-[#CAFF69] rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="w-56 h-56 left-[18.75rem] top-[37.5rem] absolute bg-[#CAFF69] rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
                 </div>
             </div>
 
             {/* me.svg on top of the animated circles */}
-            <img className="w-[930.64px] h-[930.64px] left-[41.47px] top-[73px] absolute origin-top-left rotate-[5.58deg]" src="/assets/me.svg" alt="Profile illustration" />
+            <img className="w-[58.165rem] h-[58.165rem] left-[2.591875rem] top-[4.5625rem] absolute origin-top-left rotate-[5.58deg]" src="/assets/me.svg" alt="Profile illustration" />
             
-            <div className="w-[862px] left-[858px] top-[392px] absolute text-justify justify-start text-zinc-950 text-2xl font-extralight inter-font">
+            <div className="w-[53.875rem] left-[53.625rem] top-[24.5rem] absolute text-justify justify-start text-zinc-950 text-2xl font-extralight inter-font">
                 I'm a Visual Designer with 2+ years of experience, always curious about how design can tell stories and spark emotions. I explore different mediums, experiment with colors, and constantly try new ways of bringing ideas to life. For me, design isn't just about making things look good, it's about making them feel good.<br/><br/>I love creating work that carries a sense of playfulness with purpose. Sometimes that looks like nostalgic illustrations, sometimes it's bold layouts or quirky stickers, and other times it's just me scribbling in a sketchbook until something clicks. I believe design should invite people in, make them smile, and leave a little memory behind.<br/><br/>I design cool stuff &lt;3
             </div>
             
-            <a className="w-28 left-[858px] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">GMAIL</a>
-            <a className="w-32 left-[1079px] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.behance.net/suhaaninigam" target="_blank" rel="noopener noreferrer">BEHANCE</a>
-            <a className="w-32 left-[1326px] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.linkedin.com/in/suhaaninigam/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
-            <a className="w-36 left-[1572px] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.instagram.com/suhaani.ii/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+            <a className="w-28 left-[53.625rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">GMAIL</a>
+            <a className="w-32 left-[67.4375rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.behance.net/suhaaninigam" target="_blank" rel="noopener noreferrer">BEHANCE</a>
+            <a className="w-32 left-[82.875rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.linkedin.com/in/suhaaninigam/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+            <a className="w-36 left-[98.25rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.instagram.com/suhaani.ii/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
             
-            <a className="left-[851px] top-[219px] absolute text-justify justify-start text-zinc-950 text-5xl font-extrabold inter-font uppercase tracking-[22.50px]">Hi&nbsp;&nbsp;&nbsp; I'm&nbsp;&nbsp;&nbsp; Suhaani</a>
+            <a className="left-[53.1875rem] top-[13.6875rem] absolute text-justify justify-start text-zinc-950 text-5xl font-extrabold inter-font uppercase tracking-[22.50px]">Hi&nbsp;&nbsp;&nbsp; I'm&nbsp;&nbsp;&nbsp; Suhaani</a>
             
             <button
                 className="focus:outline-none"
@@ -197,7 +197,7 @@ const MePage: React.FC = () => {
                 style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                 aria-label="Go to HomePage"
             >
-                <div className="absolute inset-x-0 top-[46px] flex flex-col items-center">
+                <div className="absolute inset-x-0 top-[2.875rem] flex flex-col items-center">
                     <img className="w-17 h-14 object-center object-cover" src="/assets/cat.svg" alt="Cat icon" />
                     <p className="w-36 h-7 text-center text-[#070307] text-xl font-normal lexend-exa lowercase -mt-2">HOME</p>
                 </div>
