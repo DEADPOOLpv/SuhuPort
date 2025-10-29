@@ -175,12 +175,12 @@ const QuestPage: React.FC = () => {
                             src="/assets/windowsCrossRed.svg"
                             alt="Close"
                             onClick={() => { setShowStickersPopup(false); setShowCloseButton(false); }}
-                            className={`absolute top-[33px] right-[24px] w-[50px] inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 ${showCloseButton ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute top-[2.0625rem] right-[1.5rem] w-[3.125rem] inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 ${showCloseButton ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                         />
 
-                        <img src="/assets/cursor.png" alt="windowsCursor" className="absolute bottom-[35px] right-[24px] w-[80px] z-30" />
+                        <img src="/assets/cursor.png" alt="windowsCursor" className="absolute bottom-[2.1875rem] right-[1.5rem] w-[5rem] z-30" />
 
-                        <div className="absolute left-7 right-[69.9px] top-36 bottom-19 py-10 px-25 bg-[#F2FFDA] shadow-2xl shadow-[#F2FFDA] animate-pop-in overflow-auto hide-scrollbar scroll-container">
+                        <div className="absolute left-7 right-[4.36875rem] top-36 bottom-19 py-10 px-25 bg-[#F2FFDA] shadow-2xl shadow-[#F2FFDA] animate-pop-in overflow-auto hide-scrollbar scroll-container">
 
                             {/* Header area */}
                             <div className="flex flex-col items-center pt-2">
@@ -218,20 +218,20 @@ const QuestPage: React.FC = () => {
                     <div className="absolute inset-0 bg-black/60 transition-opacity" />
                     <div className="relative z-10 max-w-[1400px] mb-5" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
                         <img src="/assets/windows xp.png" alt="music window" className="w-full h-auto rounded-lg animate-pop-in" onAnimationEnd={() => setShowMusicClose(true)} />
-                        <img src="/assets/windowsCrossRed.svg" alt="Close" onClick={() => { setShowMusicPopup(false); setShowMusicClose(false); }} className={`absolute top-[33px] right-[24px] w-[50px] inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 ${showMusicClose ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} />
-                        <img src="/assets/cursor.png" alt="windowsCursor" className="absolute bottom-[35px] right-[24px] w-[80px] z-30" />
+                        <img src="/assets/windowsCrossRed.svg" alt="Close" onClick={() => { setShowMusicPopup(false); setShowMusicClose(false); }} className={`absolute top-[2.0625rem] right-[1.5rem] w-[3.125rem] inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 ${showMusicClose ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} />
+                        <img src="/assets/cursor.png" alt="windowsCursor" className="absolute bottom-[2.1875rem] right-[1.5rem] w-[5rem] z-30" />
 
-                        <div className="absolute left-7 right-[69.9px] top-36 bottom-19 py-10 px-25 bg-black animate-pop-in overflow-auto hide-scrollbar scroll-container text-white">
+                        <div className="absolute left-7 right-[4.36875rem] top-36 bottom-19 py-10 px-25 bg-black animate-pop-in overflow-auto hide-scrollbar scroll-container text-white">
                             <div className="flex flex-col items-center pt-2">
                                 <img src="/assets/cat.svg" alt="logo" className="w-10 h-10" />
                             </div>
 
                             <div className="mt-8 flex justify-center">
                                 <div className="grid grid-cols-2 gap-10">
-                                    <img src="/assets/questSong1.svg" alt="song 1" className="w-[395px] h-[238px] object-cover " />
-                                    <img src="/assets/questSong2.svg" alt="song 2" className="w-[395px] h-[238px] object-cover " />
-                                    <img src="/assets/questSong3.svg" alt="song 3" className="w-[395px] h-[238px] object-cover " />
-                                    <img src="/assets/questSong4.svg" alt="song 4" className="w-[395px] h-[238px] object-cover " />
+                                    <img src="/assets/questSong1.svg" alt="song 1" className="w-[24.6875rem] h-[14.875rem] object-cover " />
+                                    <img src="/assets/questSong2.svg" alt="song 2" className="w-[24.6875rem] h-[14.875rem] object-cover " />
+                                    <img src="/assets/questSong3.svg" alt="song 3" className="w-[24.6875rem] h-[14.875rem] object-cover " />
+                                    <img src="/assets/questSong4.svg" alt="song 4" className="w-[24.6875rem] h-[14.875rem] object-cover " />
                                 </div>
                             </div>
 
@@ -250,7 +250,7 @@ const QuestPage: React.FC = () => {
                     <div className="relative z-10 max-w-[1400px] mb-5" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
                         <img src="/assets/windows xp.png" alt="graphics window" className="w-full h-auto rounded-lg animate-pop-in" onAnimationEnd={() => setShowGraphicsClose(true)} />
                         <img src="/assets/windowsCrossRed.svg" alt="Close" onClick={() => { setShowGraphicsPopup(false); setShowGraphicsClose(false); }} className={`absolute top-[33px] right-[24px] w-[50px] inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 ${showGraphicsClose ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} />
-                        <img src="/assets/cursor.png" alt="windowsCursor" className="absolute bottom-[35px] right-[24px] w-[80px] z-30" />
+                        <img src="/assets/cursor.png" alt="windowsCursor" className="absolute bottom-[2.1875rem] right-[1.5rem] w-[5rem] z-30" />
 
                         <div className="absolute left-7 right-[69.9px] top-36 bottom-19 py-10 px-25 bg-black animate-pop-in overflow-auto hide-scrollbar scroll-container text-white">
                             <div className="flex flex-col items-center pt-2">
@@ -260,13 +260,13 @@ const QuestPage: React.FC = () => {
                             <div className="mt-6">
                                 <div className='grid grid-cols-2 justify-center items-center gap-x-5'>
                                     <img src='/assets/smiths.jpg' alt='Smiths Poster' className=''/>
-                                    <div className='w-[568.4px] h-[97.8px] inter-font text-[#CAFF69]'>
-                                        <p className='mx-5 text-[31.97px] font-extrabold tracking-[4px] uppercase'>Heaven Knows I&apos;m Miserable Now</p>
-                                        <p className='mx-5 text-[17.76px] font-extralight tracking-[9px]'>The Smiths ‧ 1984</p>
+                                    <div className='w-[35.525rem] h-[6.1125rem] inter-font text-[#CAFF69]'>
+                                        <p className='mx-5 text-[1.998125rem] font-extrabold tracking-[4px] uppercase'>Heaven Knows I&apos;m Miserable Now</p>
+                                        <p className='mx-5 text-[1.11rem] font-extralight tracking-[9px]'>The Smiths ‧ 1984</p>
                                     </div>
-                                    <div className='w-[568.4px] h-[97.8px] inter-font text-[#CAFF69] text-right'>
-                                        <p className='mx-10 text-[31.97px] font-extrabold tracking-[4px] uppercase'>Charles Leclerc</p>
-                                        <p className='mx-10 text-[17.76px] font-extralight tracking-[8px]'>Scuderia Ferrari</p>
+                                    <div className='w-[35.525rem] h-[6.1125rem] inter-font text-[#CAFF69] text-right'>
+                                        <p className='mx-10 text-[1.998125rem] font-extrabold tracking-[4px] uppercase'>Charles Leclerc</p>
+                                        <p className='mx-10 text-[1.11rem] font-extralight tracking-[8px]'>Scuderia Ferrari</p>
                                     </div>
                                     <img src='/assets/leclerc.jpg' alt='Leclerc Poster' className=''/>
                                     <img src='/assets/arctic.jpg' alt='Arctic Monkeys Poster' className=''/>
