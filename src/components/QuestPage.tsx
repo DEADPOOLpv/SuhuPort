@@ -91,7 +91,7 @@ const QuestPage: React.FC = () => {
                 onClick={handleStickersClick}
             >
                 <img className="w-20 h-20" src="/assets/windowsStar.png" alt="stickers" />
-                <span className="w-60 h-4 text-center text-zinc-950 text-xl font-[550] lexend-exa lowercase tracking-[3px]">stickers</span>
+                <span className="w-60 h-4 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">stickers</span>
             </button>
 
             {/* Music Button */}
@@ -100,7 +100,7 @@ const QuestPage: React.FC = () => {
                 onClick={handleMusicClick}
             >
                 <img className="w-20 h-20" src="/assets/windowsMusic.png" alt="music" />
-                <span className="w-60 h-4 text-center text-zinc-950 text-xl font-[550] lexend-exa lowercase tracking-[3px]">music</span>
+                <span className="w-60 h-4 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">music</span>
             </button>
 
             {/* Graphics Button */}
@@ -109,7 +109,7 @@ const QuestPage: React.FC = () => {
                 onClick={handleGraphicsClick}
             >
                 <img className="w-20 h-20" src="/assets/windowsGraphics.png" alt="graphics" />
-                <span className="w-60 h-4 text-center text-zinc-950 text-xl font-[550] lexend-exa lowercase tracking-[3px]">graphics</span>
+                <span className="w-60 h-4 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">graphics</span>
             </button>
 
             {/* Edits Button */}
@@ -118,7 +118,7 @@ const QuestPage: React.FC = () => {
                 onClick={handleEditsClick}
             >
                 <img className="w-20 h-20" src="/assets/windowsEdits.png" alt="edits" />
-                <span className="w-60 h-4 text-center text-zinc-950 text-xl font-[550] lexend-exa lowercase tracking-[3px]">edits</span>
+                <span className="w-60 h-4 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">edits</span>
             </button>
 
             {/* Photos Button */}
@@ -127,7 +127,7 @@ const QuestPage: React.FC = () => {
                 onClick={handlePhotosClick}
             >
                 <img className="w-20 h-20" src="/assets/windowsPhotos.png" alt="photos" />
-                <span className="w-60 h-4 text-center text-zinc-950 text-xl font-[550] lexend-exa lowercase tracking-[3px]">photos</span>
+                <span className="w-60 h-4 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">photos</span>
             </button>
 
             {/* Home Button */}
@@ -136,14 +136,14 @@ const QuestPage: React.FC = () => {
                 onClick={handleHomeClick}
             >
                 <img className="w-16 h-14" src="/assets/cat.svg" alt="home" />
-                <span className="w-36 h-7 -mt-2.5 text-center text-zinc-950 text-xl font-[550] lexend-exa lowercase tracking-[3px]">home</span>
+                <span className="w-36 h-7 -mt-2.5 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">home</span>
             </button>
 
             {/* Contact Button */}
             <div className="absolute flex flex-col items-center left-[35rem] top-[12rem] focus:outline-none bg-transparent cursor-pointer">
                 <a href='https://www.notion.so/Suhaani-Nigam-281906501a6180bf89f9e2394077fccb' target='_blank' rel="noreferrer">
                     <img className="w-20 h-20" src="/assets/windowsContact.png" alt="contact" />
-                    <span className="w-36 h-7 text-center text-zinc-950 text-xl font-[550] lexend-exa lowercase tracking-[3px]">contact</span>
+                    <span className="w-36 h-7 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">contact</span>
                 </a> 
             </div>
 
@@ -185,8 +185,8 @@ const QuestPage: React.FC = () => {
                             {/* Header area */}
                             <div className="flex flex-col items-center pt-2">
                                 <img src="/assets/cat.svg" alt="logo" className="w-10 h-10 mb-13" />
-                                <p className="inter-font font-semibold mb-2">Like what you see?</p>
-                                <a className="px-6 py-2 mb-8 bg-white border border-[#A3E230] rounded-full text-[#A3E230] inter-font font-bold text-[21.33px] tracking-[2px] transition-colors duration-200 hover:bg-[#A3E230] hover:text-white" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">BUY NOW</a>
+                                <p className="inter-font font-semibold text-[17.78px] mb-2">Like what you see?</p>
+                                <a className="px-6 py-2 mb-8 bg-white border border-[#A3E230] rounded-full text-[#A3E230] inter-font font-bold text-[21.33px] tracking-[0.07em] transition-colors duration-200 hover:bg-[#A3E230] hover:text-white" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">BUY NOW</a>
                             </div>
 
                             {/* Posters area (grid) */}
@@ -205,7 +205,7 @@ const QuestPage: React.FC = () => {
 
                             {/* Secondary CTA at the end of images */}
                             <div className="mt-18 mb-1 flex justify-center">
-                              <a className="px-6 py-2 bg-white border border-[#A3E230] rounded-full text-[#A3E230] inter-font font-bold text-[21.33px] tracking-[2px] transition-colors duration-200 hover:bg-[#A3E230] hover:text-white" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">BUY NOW</a>
+                              <a className="px-6 py-2 bg-white border border-[#A3E230] rounded-full text-[#A3E230] inter-font font-bold text-[21.33px] tracking-[0.07em] transition-colors duration-200 hover:bg-[#A3E230] hover:text-white" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">BUY NOW</a>
                             </div>
                         </div>
                     </div>
@@ -236,7 +236,7 @@ const QuestPage: React.FC = () => {
                             </div>
 
                             <div className="mt-10 flex justify-center">
-                              <p className="inter-font font-semibold lowercase">enjoy some songs</p>
+                              <p className="inter-font font-medium text-[20px] tracking-[0.18em] lowercase">enjoy some songs</p>
                             </div>
                         </div>
                     </div>
@@ -261,18 +261,18 @@ const QuestPage: React.FC = () => {
                                 <div className='grid grid-cols-2 justify-center items-center gap-x-5'>
                                     <img src='/assets/smiths.jpg' alt='Smiths Poster' className=''/>
                                     <div className='w-[35.525rem] h-[6.1125rem] inter-font text-[#CAFF69]'>
-                                        <p className='mx-5 text-[1.998125rem] font-extrabold tracking-[4px] uppercase'>Heaven Knows I&apos;m Miserable Now</p>
-                                        <p className='mx-5 text-[1.11rem] font-extralight tracking-[9px]'>The Smiths ‧ 1984</p>
+                                        <p className='mx-5 text-[1.998125rem] font-extrabold tracking-[0.1em] uppercase'>Heaven Knows I&apos;m Miserable Now</p>
+                                        <p className='mx-5 text-[1.11rem] font-extralight tracking-[0.45em]'>The Smiths ‧ 1984</p>
                                     </div>
                                     <div className='w-[35.525rem] h-[6.1125rem] inter-font text-[#CAFF69] text-right'>
-                                        <p className='mx-10 text-[1.998125rem] font-extrabold tracking-[4px] uppercase'>Charles Leclerc</p>
-                                        <p className='mx-10 text-[1.11rem] font-extralight tracking-[8px]'>Scuderia Ferrari</p>
+                                        <p className='mx-10 text-[1.998125rem] font-extrabold tracking-[0.1em] uppercase'>Charles Leclerc</p>
+                                        <p className='mx-10 text-[1.11rem] font-extralight tracking-[0.45em]'>Scuderia Ferrari</p>
                                     </div>
                                     <img src='/assets/leclerc.jpg' alt='Leclerc Poster' className=''/>
                                     <img src='/assets/arctic.jpg' alt='Arctic Monkeys Poster' className=''/>
                                     <div className='w-[568.4px] h-[97.8px] inter-font text-[#CAFF69]'>
-                                        <p className='mx-5 text-[31.97px] font-extrabold tracking-[4px] uppercase'>Why&apos;d You Only Call Me When You&apos;re High?</p>
-                                        <p className='mx-5 text-[17.76px] font-extralight tracking-[8px]'>Arctic Monkeys ‧ 2013</p>
+                                        <p className='mx-5 text-[31.97px] font-extrabold tracking-[0.1em] uppercase'>Why&apos;d You Only Call Me When You&apos;re High?</p>
+                                        <p className='mx-5 text-[17.76px] font-extralight tracking-[0.45em]'>Arctic Monkeys ‧ 2013</p>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 gap-9 my-20">
@@ -341,7 +341,7 @@ const QuestPage: React.FC = () => {
                             </div>
 
                             <div className="mt-3">
-                                <div className="grid grid-cols-3 gap-9 items-center inter-font font-extrabold text-[31.89px] text-center uppercase tracking-[5px]">
+                                <div className="grid grid-cols-3 gap-9 items-center inter-font font-extrabold text-[31.88px] text-center uppercase tracking-[0.1em]">
                                     <video src="/assets/questEditsVid1.mp4" className="w-full h-auto rounded-sm" preload="metadata"/>
                                     <p>Cutouts & Corners</p>
                                     <video src="/assets/questEditsVid2.mp4" className="w-full h-auto rounded-sm" preload="metadata" />

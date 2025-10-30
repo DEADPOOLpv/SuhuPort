@@ -18,7 +18,7 @@ const ProjectsPage: React.FC = () => {
             >
                 <div className="flex flex-col items-center pointer-events-auto">
                     <img className="w-17 h-14 object-center object-cover" src="/assets/cat.svg" alt="Cat icon" />
-                    <p className="w-36 h-7 text-center text-[#070307] text-xl font-normal lexend-exa lowercase -mt-2">HOME</p>
+                    <p className="w-36 h-7 text-center text-[#070307] text-[20px] font-normal lexend-exa lowercase -mt-2">HOME</p>
                 </div>
             </button>
             

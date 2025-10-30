@@ -36,18 +36,18 @@ export default function HomePage() {
   return (
     <div className="w-screen h-screen relative bg-[#CAFF69] overflow-hidden">
       {/* Name and Title */}
-      <div className="absolute left-[13.75rem] top-[30rem] z-10 text-left"> {/* 220px -> 13.75rem, 480px -> 30rem */}
-        <div className="text-black font-extrabold text-5xl leading-tight tracking-wide inter-font">
-          SUHAANI<br />NIGAM
+      <div className="absolute left-[13.75rem] top-[30rem] z-10 text-left">
+        <div className="text-black font-bold text-[50px] tracking-[0.15em] inter-font text-left">
+          <p> SUHAANI </p> <p className='-mt-6'>NIGAM</p>
         </div>
-        <div className="mt-4 text-black font-normal text-xl tracking-[0.25em] inter-font">
+        <div className=" text-black font-medium text-[20px] tracking-[0.51em] inter-font">
           VISUAL DESIGNER
         </div>
       </div>
 
       {/* Floating Lady Illustration as hyperlink with animation */}
       <button
-        className="absolute left-[60%] top-[37.5rem] -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer" /* 600px -> 37.5rem */
+        className="absolute left-[60%] top-[37.5rem] -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer"
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
         style={{ outline: 'none' }}
@@ -55,14 +55,14 @@ export default function HomePage() {
         <img
           src="assets/floatingLady.png"
           alt="Floating Lady"
-          className="h-[46.875rem] w-auto animate-[bounce_5s_ease-in-out_infinite]" /* 750px -> 46.875rem */
+          className="h-[46.875rem] w-auto animate-[bounce_5s_ease-in-out_infinite]"
           style={{ filter: 'drop-shadow(0 0 8px #0002)' }}
         />
       </button>
 
       {/* About Me Button */}
       <button
-        className="absolute left-[78%] top-[38.75rem] -translate-y-1/2 z-10 bg-[#CF0067] text-white animate-[bounce_5s_ease-in-out_infinite] font-bold text-lg px-6 py-2 rounded-lg shadow-lg transition-transform hover:scale-105 cursor-pointer" /* 620px -> 38.75rem */
+        className="absolute left-[78%] top-[38.75rem] -translate-y-1/2 z-10 bg-[#CF0067] text-[#CAFF69] animate-[bounce_5s_ease-in-out_infinite] font-extrabold text-[20px] tracking-[0.16em] px-6 py-2 rounded-sm shadow-lg transition-transform hover:scale-105 cursor-pointer" /* 620px -> 38.75rem */
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
       >
@@ -82,13 +82,12 @@ export default function HomePage() {
               ${shakingBubble === bubble.id ? 'animate-shake' : ''}
               `}
           >
-            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#A3FFB0] font-bold text-lg pointer-events-none inter-font">
+            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#A3FFB0] font-bold text-[20px] tracking-[0.1em] pointer-events-none inter-font">
               tap
             </span>
           </div>
         );
 
-        // Resume is a link, others are buttons
         return (
           <div
             key={bubble.id}
@@ -133,7 +132,7 @@ export default function HomePage() {
               bubbleContent
             )}
             <div
-              className={`absolute left-full top-1/2 -translate-y-1/2 ml-6 ${bubble.color} text-xl font-bold tracking-[9px] whitespace-nowrap transition-opacity duration-300 inter-font`}
+              className={`absolute left-full top-1/2 -translate-y-1/2 ml-6 ${bubble.color} text-[20px] font-bold tracking-[0.45em] whitespace-nowrap transition-opacity duration-300 inter-font`}
               style={{
                 opacity: hoveredBubble === bubble.id ? 1 : 0,
                 pointerEvents: 'none'

@@ -180,17 +180,17 @@ const MePage: React.FC = () => {
             {/* me.svg on top of the animated circles */}
             <img className="w-[58.165rem] h-[58.165rem] left-[2.591875rem] top-[4.5625rem] absolute origin-top-left rotate-[5.58deg]" src="/assets/me.svg" alt="Profile illustration" />
             
-            <div className="w-[53.875rem] left-[53.625rem] top-[24.5rem] absolute text-justify justify-start text-zinc-950 text-2xl font-extralight inter-font">
+            <div className="w-[53.875rem] left-[53.625rem] top-[24.5rem] absolute text-justify justify-start text-zinc-950 text-[25px] font-extralight inter-font">
                 I'm a Visual Designer with 2+ years of experience, always curious about how design can tell stories and spark emotions. I explore different mediums, experiment with colors, and constantly try new ways of bringing ideas to life. For me, design isn't just about making things look good, it's about making them feel good.<br/><br/>I love creating work that carries a sense of playfulness with purpose. Sometimes that looks like nostalgic illustrations, sometimes it's bold layouts or quirky stickers, and other times it's just me scribbling in a sketchbook until something clicks. I believe design should invite people in, make them smile, and leave a little memory behind.<br/><br/>I design cool stuff &lt;3
             </div>
             
-            <a className="w-28 left-[53.625rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">GMAIL</a>
-            <a className="w-32 left-[67.4375rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.behance.net/suhaaninigam" target="_blank" rel="noopener noreferrer">BEHANCE</a>
-            <a className="w-32 left-[82.875rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.linkedin.com/in/suhaaninigam/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
-            <a className="w-36 left-[98.25rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-2xl font-medium inter-font" href="https://www.instagram.com/suhaani.ii/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-            
-            <a className="left-[53.1875rem] top-[13.6875rem] absolute text-justify justify-start text-zinc-950 text-5xl font-extrabold inter-font uppercase tracking-[22.50px]">Hi&nbsp;&nbsp;&nbsp; I'm&nbsp;&nbsp;&nbsp; Suhaani</a>
-            
+            <a className="w-28 left-[53.625rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-[25px] font-medium inter-font" href="https://mail.google.com/mail/?view=cm&fs=1&to=suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">GMAIL</a>
+            <a className="w-32 left-[67.4375rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-[25px] font-medium inter-font" href="https://www.behance.net/suhaaninigam" target="_blank" rel="noopener noreferrer">BEHANCE</a>
+            <a className="w-32 left-[82.875rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-[25px] font-medium inter-font" href="https://www.linkedin.com/in/suhaaninigam/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+            <a className="w-36 left-[98.25rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-[25px] font-medium inter-font" href="https://www.instagram.com/suhaani.ii/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+
+            <a className="left-[53.1875rem] top-[13.6875rem] absolute text-justify justify-start text-zinc-950 text-[50px] font-extrabold inter-font uppercase tracking-[0.45em]">Hi&nbsp;&nbsp;&nbsp; I'm&nbsp;&nbsp;&nbsp; Suhaani</a>
+
             <button
                 className="focus:outline-none"
                 onClick={() => setShowHomePage(true)}
@@ -199,7 +199,7 @@ const MePage: React.FC = () => {
             >
                 <div className="absolute inset-x-0 top-[2.875rem] flex flex-col items-center">
                     <img className="w-17 h-14 object-center object-cover" src="/assets/cat.svg" alt="Cat icon" />
-                    <p className="w-36 h-7 text-center text-[#070307] text-xl font-normal lexend-exa lowercase -mt-2">HOME</p>
+                    <p className="w-36 h-7 text-center text-[#070307] text-[20px] font-semibold lexend-exa lowercase -mt-2">HOME</p>
                 </div>
             </button>
         </div>
