@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  zoom: reset;
+}
+
 .lexend-exa {
   font-family: "Lexend Exa", sans-serif;
 }
