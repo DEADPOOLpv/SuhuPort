@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { preloadAssets } from '../utils/preloadAssets';
 
 interface LoadingPageProps {
   onComplete?: () => void;
@@ -7,58 +8,83 @@ interface LoadingPageProps {
 const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
   const [zoomed, setZoomed] = useState(false);
   const [isWinking, setIsWinking] = useState(false);
-  
 
   useEffect(() => {
-    let returnTimer: ReturnType<typeof setTimeout>;
-    let zoomDelayTimer: ReturnType<typeof setTimeout>;
-    let zoomTimer: ReturnType<typeof setTimeout>;
+    let cancelled = false;
+    let returnTimer: ReturnType<typeof setTimeout> | undefined;
+    let zoomDelayTimer: ReturnType<typeof setTimeout> | undefined;
+    let zoomTimer: ReturnType<typeof setTimeout> | undefined;
 
-    const winkTimer = setTimeout(() => {
-      setIsWinking(true);
+    (async () => {
+      try {
+        await preloadAssets({});
 
-      returnTimer = setTimeout(() => {
-        setIsWinking(false);
+        if (cancelled) return;
 
-        zoomDelayTimer = setTimeout(() => {
-          setZoomed(true);
+        setIsWinking(true);
 
-          zoomTimer = setTimeout(() => {
-            if (onComplete) onComplete(); // <-- notify parent to load HomePage
-          }, 700); // matches zoom transition
-        }, 300); // delay after wink before zoom (adjust as needed)
-      }, 400); // wink duration
-    }, 800);
+        // After wink duration, return to normal, wait a bit, then zoom and finally call onComplete
+        returnTimer = setTimeout(() => {
+          setIsWinking(false);
+
+          zoomDelayTimer = setTimeout(() => {
+            setZoomed(true);
+
+            zoomTimer = setTimeout(() => {
+              if (onComplete) onComplete();
+            }, 700); // matches zoom transition duration
+          }, 300); // delay after wink before zoom
+        }, 400); // wink duration
+      } catch (e) {
+        // If preload fails, still attempt the visual flow and continue
+        console.warn('Preload failed', e);
+        if (cancelled) return;
+
+        setIsWinking(true);
+        returnTimer = setTimeout(() => {
+          setIsWinking(false);
+
+          zoomDelayTimer = setTimeout(() => {
+            setZoomed(true);
+
+            zoomTimer = setTimeout(() => {
+              if (onComplete) onComplete();
+            }, 700);
+          }, 300);
+        }, 400);
+      }
+    })();
 
     return () => {
-      clearTimeout(winkTimer);
-      clearTimeout(returnTimer);
-      clearTimeout(zoomDelayTimer);
-      clearTimeout(zoomTimer);
+      cancelled = true;
+      if (returnTimer) clearTimeout(returnTimer);
+      if (zoomDelayTimer) clearTimeout(zoomDelayTimer);
+      if (zoomTimer) clearTimeout(zoomTimer);
     };
   }, [onComplete]);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-lime-50 relative overflow-hidden" aria-busy={isWinking ? 'true' : 'false'}>
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-32 flex items-center justify-center">
-        <img
-          src={isWinking ? "/assets/catWink.svg" : "/assets/cat.svg"}
-          alt="Cat"
-          className={`w-full h-full object-contain transition-all duration-700 ease-in-out ${zoomed ? 'z-50' : ''}`}
-          style={
-            zoomed
-              ? {
-                  position: 'absolute',
-                  left: '50%',
-                  top: '50%',
-                  transform: 'translate(2000%, -50%) scale(90)',
-                  width: 'auto',
-                  height: '80vh',
-                }
-              : { transform: 'translate(0, 0) scale(1)' }
-          }
-        />
-      </div>
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 flex items-center justify-center">
+          <img
+            src={isWinking ? '/assets/catWink.svg' : '/assets/cat.svg'}
+            alt="Cat"
+            className={`w-full h-full object-contain transition-all duration-700 ease-in-out ${zoomed ? 'z-50' : ''}`}
+            style={
+              zoomed
+                ? {
+                    position: 'absolute',
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(2000%, -50%) scale(90)',
+                    width: 'auto',
+                    height: '80vh',
+                  }
+                : { transform: 'translate(0, 0) scale(1)' }
+            }
+          />
+
+        </div>
     </div>
   );
 };
