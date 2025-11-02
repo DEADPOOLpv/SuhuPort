@@ -5,7 +5,40 @@
   font-family: "Lexend Exa", sans-serif;
 }
 
-
 .inter-font {
   font-family: "Inter", sans-serif;
+}
+
+html {
+  /* Prevent Windows from auto-scaling */
+  -ms-content-zooming: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  /* Disable text size adjustment */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent images/videos from stretching */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
