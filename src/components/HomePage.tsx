@@ -62,7 +62,7 @@ export default function HomePage() {
 
       {/* About Me Button */}
       <button
-        className="absolute left-[78%] top-[38.75rem] -translate-y-1/2 z-10 bg-[#CF0067] text-[#CAFF69] animate-[bounce_5s_ease-in-out_infinite] font-extrabold text-[20px] tracking-[0.16em] px-6 py-2 rounded-sm shadow-lg transition-transform hover:scale-105 cursor-pointer" /* 620px -> 38.75rem */
+        className="absolute right-[12.5rem] top-[38.75rem] -translate-y-1/2 z-10 bg-[#CF0067] text-[#CAFF69] animate-[bounce_5s_ease-in-out_infinite] font-extrabold text-[20px] tracking-[0.16em] px-6 py-2 rounded-sm shadow-lg transition-transform hover:scale-105 cursor-pointer" /* 620px -> 38.75rem */
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
       >
