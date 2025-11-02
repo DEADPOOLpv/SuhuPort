@@ -99,7 +99,7 @@ const MePage: React.FC = () => {
             `}</style>
 
             {/* Animated circles layer - positioned to match me.svg */}
-            <div className="w-[58.165rem] h-[58.165rem] left-[2.591875rem] top-[3.5625rem] absolute origin-top-left rotate-[5.58deg]">
+            <div className="w-[58.165rem] h-[58.165rem] left-[2.591875rem] top-[3rem] absolute origin-top-left rotate-[5.58deg]">
                 <div className="w-full h-full relative blur-lg">
                     {/* Center point for orbits - positioned at center of me.svg */}
                     <div className="w-full h-full absolute flex items-center justify-center">
@@ -178,9 +178,9 @@ const MePage: React.FC = () => {
             </div>
 
             {/* me.svg on top of the animated circles */}
-            <img className="w-[58.165rem] h-[58.165rem] left-[2.591875rem] top-[2.5625rem] absolute origin-top-left rotate-[5.58deg]" src="/assets/me.svg" alt="Profile illustration" />
+            <img className="w-[58.165rem] h-[58.165rem] left-[2.591875rem] top-[2rem] absolute origin-top-left rotate-[5.58deg]" src="/assets/me.svg" alt="Profile illustration" />
             
-            <div className="w-[53.875rem] left-[53.625rem] top-[22.5rem] absolute text-justify justify-start text-zinc-950 text-[25px] font-extralight inter-font">
+            <div className="w-[53.875rem] left-[53.625rem] top-[22rem] absolute text-justify justify-start text-zinc-950 text-[25px] font-extralight inter-font">
                 I'm a Visual Designer with 2+ years of experience, always curious about how design can tell stories and spark emotions. I explore different mediums, experiment with colors, and constantly try new ways of bringing ideas to life. For me, design isn't just about making things look good, it's about making them feel good.<br/><br/>I love creating work that carries a sense of playfulness with purpose. Sometimes that looks like nostalgic illustrations, sometimes it's bold layouts or quirky stickers, and other times it's just me scribbling in a sketchbook until something clicks. I believe design should invite people in, make them smile, and leave a little memory behind.<br/><br/>I design cool stuff &lt;3
             </div>
             
@@ -189,7 +189,7 @@ const MePage: React.FC = () => {
             <a className="w-32 left-[82.875rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-[25px] font-medium inter-font" href="https://www.linkedin.com/in/suhaaninigam/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
             <a className="w-36 left-[98.25rem] inset-x-0 bottom-0 mb-16 absolute text-justify justify-start text-zinc-950 text-[25px] font-medium inter-font" href="https://www.instagram.com/suhaani.ii/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
 
-            <a className="left-[53.1875rem] top-[13.6875rem] absolute text-justify justify-start text-zinc-950 text-[50px] font-extrabold inter-font uppercase tracking-[0.45em]">Hi&nbsp;&nbsp;&nbsp; I'm&nbsp;&nbsp;&nbsp; Suhaani</a>
+            <a className="left-[53.1875rem] top-[12.5rem] absolute text-justify justify-start text-zinc-950 text-[50px] font-extrabold inter-font uppercase tracking-[0.45em]">Hi&nbsp;&nbsp;&nbsp; I'm&nbsp;&nbsp;&nbsp; Suhaani</a>
 
             <button
                 className="focus:outline-none"
