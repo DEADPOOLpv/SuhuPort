@@ -32,25 +32,25 @@ const ProjectsPage: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img 
-                  src="/assets/spoonshub.png" 
-                  alt="Bringing Sponsors & Events Together For You" 
-                  className="object-cover"
-                />
+                    <img
+                      src="/assets/spoonshub.png"
+                      alt="Bringing Sponsors & Events Together For You"
+                      className="w-150 h-150 object-cover"
+                    />
               </a>
 
               {/* Valorant Card - Top Right */}
               <a
-                className="absolute top-[8%] right-[13%] transform transition-transform duration-300 ease-out hover:-translate-y-8 hover:scale-112 hover:rotate-[5deg] z-40"
+                className="absolute top-[8%] right-[18%] transform transition-transform duration-300 ease-out hover:-translate-y-8 hover:scale-112 hover:rotate-[5deg] z-40"
                 style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
                 href='https://www.behance.net/gallery/186682645/Valorant-Concept-Art'
                 target="_blank"
                 rel="noreferrer"
               >
-                <img 
-                  src="/assets/valo.png" 
-                  alt="Valorant Concept Art" 
-                  className="object-cover"
+                <img
+                  src="/assets/valo.png"
+                  alt="Valorant Concept Art"
+                  className="w-145 h-145 object-cover"
                 />
               </a>
 
@@ -62,22 +62,22 @@ const ProjectsPage: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 >
-                <img 
-                  src="/assets/qshi.png" 
-                  alt="Oshi Beauty Product Photography" 
-                  className="object-cover"
+                <img
+                  src="/assets/qshi.png"
+                  alt="Oshi Beauty Product Photography"
+                  className="w-150 h-150 object-cover"
                 />
               </a>
 
               {/* Coming Soon Card 1 - Bottom Center */}
               <div 
-                className="absolute bottom-[1%] left-[34%]"
+                className="absolute bottom-[1%] left-[39%]"
                 style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
               >
-                <img 
-                  src="/assets/comingsoon.png" 
-                  alt="Coming Soon Project" 
-                  className="object-cover"
+                <img
+                  src="/assets/comingsoon.png"
+                  alt="Coming Soon Project"
+                  className="w-120 h-120 object-cover"
                 />
               </div>
 
@@ -86,10 +86,10 @@ const ProjectsPage: React.FC = () => {
                 className="absolute top-[50%] right-[6%]"
                 style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
               >
-                <img 
-                  src="/assets/comingsoons.png" 
-                  alt="Coming Soon Project" 
-                  className="object-cover"
+                <img
+                  src="/assets/comingsoons.png"
+                  alt="Coming Soon Project"
+                  className="w-130 h-130 object-cover"
                 />
               </div>
             </div>
