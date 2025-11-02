@@ -8,6 +8,7 @@ interface LoadingPageProps {
 const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
   const [zoomed, setZoomed] = useState(false);
   const [isWinking, setIsWinking] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -17,36 +18,34 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
 
     (async () => {
       try {
-        await preloadAssets({});
-
+        await preloadAssets({
+          onProgress: (loaded, total) => {
+            if (!cancelled) {
+              setProgress((loaded / total) * 100);
+            }
+          }
+        });
+        
         if (cancelled) return;
-
         setIsWinking(true);
-
-        // After wink duration, return to normal, wait a bit, then zoom and finally call onComplete
+        
         returnTimer = setTimeout(() => {
           setIsWinking(false);
-
           zoomDelayTimer = setTimeout(() => {
             setZoomed(true);
-
             zoomTimer = setTimeout(() => {
               if (onComplete) onComplete();
-            }, 700); // matches zoom transition duration
-          }, 300); // delay after wink before zoom
-        }, 400); // wink duration
+            }, 700);
+          }, 300);
+        }, 400);
       } catch (e) {
-        // If preload fails, still attempt the visual flow and continue
         console.warn('Preload failed', e);
         if (cancelled) return;
-
         setIsWinking(true);
         returnTimer = setTimeout(() => {
           setIsWinking(false);
-
           zoomDelayTimer = setTimeout(() => {
             setZoomed(true);
-
             zoomTimer = setTimeout(() => {
               if (onComplete) onComplete();
             }, 700);
@@ -65,7 +64,8 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-lime-50 relative overflow-hidden" aria-busy={isWinking ? 'true' : 'false'}>
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 flex items-center justify-center">
+      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-6">
+        <div className="w-40 h-40 flex items-center justify-center">
           <img
             src={isWinking ? '/assets/catWink.svg' : '/assets/cat.svg'}
             alt="Cat"
@@ -83,8 +83,20 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
                 : { transform: 'translate(0, 0) scale(1)' }
             }
           />
-
         </div>
+        
+        <div className={`w-64 transition-opacity duration-300 ${zoomed ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="w-full bg-lime-200 rounded-full h-2 overflow-hidden">
+            <div 
+              className="bg-lime-600 h-full transition-all duration-300 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <p className="text-center text-lime-700 text-sm mt-2 font-medium">
+            {Math.round(progress)}%
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
