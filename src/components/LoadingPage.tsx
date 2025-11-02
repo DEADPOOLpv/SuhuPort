@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { preloadAssets } from '../utils/preloadAssets';
+import { preloadAssets, areAllAssetsCached, clearOldCaches } from '../utils/preloadAssets';
 
 interface LoadingPageProps {
   onComplete?: () => void;
@@ -16,9 +16,43 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
     let zoomDelayTimer: ReturnType<typeof setTimeout> | undefined;
     let zoomTimer: ReturnType<typeof setTimeout> | undefined;
 
+    const startAnimation = () => {
+      if (cancelled) return;
+      setIsWinking(true);
+      
+      returnTimer = setTimeout(() => {
+        if (cancelled) return;
+        setIsWinking(false);
+        zoomDelayTimer = setTimeout(() => {
+          if (cancelled) return;
+          setZoomed(true);
+          zoomTimer = setTimeout(() => {
+            if (cancelled) return;
+            if (onComplete) onComplete();
+          }, 700);
+        }, 300);
+      }, 400);
+    };
+
     (async () => {
       try {
+        // Check if assets are already cached
+        const alreadyCached = await areAllAssetsCached();
+        
+        if (alreadyCached) {
+          // Skip preloading, set progress to 100% immediately
+          if (!cancelled) {
+            setProgress(100);
+            // Shorter delay before animation when cached
+            setTimeout(() => startAnimation(), 200);
+          }
+          return;
+        }
+
+        // Preload assets with progress tracking
         await preloadAssets({
+          batchSize: 8, // Increased for better parallelism
+          timeout: 15000, // 15 second timeout
           onProgress: (loaded, total) => {
             if (!cancelled) {
               setProgress((loaded / total) * 100);
@@ -26,31 +60,15 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
           }
         });
         
-        if (cancelled) return;
-        setIsWinking(true);
+        // Clean up old cache versions
+        await clearOldCaches();
         
-        returnTimer = setTimeout(() => {
-          setIsWinking(false);
-          zoomDelayTimer = setTimeout(() => {
-            setZoomed(true);
-            zoomTimer = setTimeout(() => {
-              if (onComplete) onComplete();
-            }, 700);
-          }, 300);
-        }, 400);
+        // Start animation sequence
+        startAnimation();
       } catch (e) {
         console.warn('Preload failed', e);
-        if (cancelled) return;
-        setIsWinking(true);
-        returnTimer = setTimeout(() => {
-          setIsWinking(false);
-          zoomDelayTimer = setTimeout(() => {
-            setZoomed(true);
-            zoomTimer = setTimeout(() => {
-              if (onComplete) onComplete();
-            }, 700);
-          }, 300);
-        }, 400);
+        // Still proceed with animation even if preload fails
+        startAnimation();
       }
     })();
 
@@ -63,12 +81,17 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-lime-50 relative overflow-hidden" aria-busy={isWinking ? 'true' : 'false'}>
+    <div 
+      className="flex items-center justify-center min-h-screen bg-lime-50 relative overflow-hidden" 
+      aria-busy={progress < 100 ? 'true' : 'false'}
+      aria-live="polite"
+      aria-label={`Loading assets: ${Math.round(progress)}%`}
+    >
       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-6">
         <div className="w-40 h-40 flex items-center justify-center">
           <img
             src={isWinking ? '/assets/catWink.svg' : '/assets/cat.svg'}
-            alt="Cat"
+            alt="Loading mascot"
             className={`w-full h-full object-contain transition-all duration-700 ease-in-out ${zoomed ? 'z-50' : ''}`}
             style={
               zoomed
@@ -86,10 +109,14 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
         </div>
         
         <div className={`w-64 transition-opacity duration-300 ${zoomed ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="w-full bg-lime-200 rounded-full h-2 overflow-hidden">
+          <div className="w-full bg-lime-200 rounded-full h-2 overflow-hidden shadow-inner">
             <div 
               className="bg-lime-600 h-full transition-all duration-300 ease-out"
               style={{ width: `${progress}%` }}
+              role="progressbar"
+              aria-valuenow={Math.round(progress)}
+              aria-valuemin={0}
+              aria-valuemax={100}
             />
           </div>
           <p className="text-center text-lime-700 text-sm mt-2 font-medium">
