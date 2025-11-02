@@ -7,6 +7,8 @@ const QuestPage: React.FC = () => {
     const [showCloseButton, setShowCloseButton] = useState(false);
     const [showMusicPopup, setShowMusicPopup] = useState(false);
     const [showMusicClose, setShowMusicClose] = useState(false);
+    // index of currently playing music track, or null
+    const [currentMusicIndex, setCurrentMusicIndex] = useState<number | null>(null);
     const [showGraphicsPopup, setShowGraphicsPopup] = useState(false);
     const [showGraphicsClose, setShowGraphicsClose] = useState(false);
     const [showPhotosPopup, setShowPhotosPopup] = useState(false);
@@ -39,8 +41,43 @@ const QuestPage: React.FC = () => {
         };
     }, [anyPopupOpen]);
 
-    // Ref to the edits popup container so we can attach video play/pause handlers
+
     const editsContainerRef = useRef<HTMLDivElement | null>(null);
+
+    const musicAudioRefs = useRef<HTMLAudioElement[]>([]);
+
+    const musicTracks = [
+        { img: '/assets/questSong1.svg', audio: '/assets/questSong1.mp4' },
+        { img: '/assets/questSong2.svg', audio: '/assets/questSong2.mp4' },
+        { img: '/assets/questSong3.svg', audio: '/assets/questSong3.mp4' },
+        { img: '/assets/questSong4.svg', audio: '/assets/questSong4.mp4' },
+    ];
+
+    const handlePlaySong = (index: number) => {
+        const target = musicAudioRefs.current[index];
+        if (!target) return;
+
+        // If the clicked track is already playing, toggle pause
+        if (currentMusicIndex === index) {
+            if (target.paused) {
+                // ensure others are paused, then play this one
+                musicAudioRefs.current.forEach((a, i) => { if (a && i !== index) { a.pause(); a.currentTime = 0; } });
+                target.play();
+                setCurrentMusicIndex(index);
+            } else {
+                target.pause();
+                setCurrentMusicIndex(null);
+            }
+            return;
+        }
+
+        // Pause any other tracks
+        musicAudioRefs.current.forEach((a, i) => { if (a && i !== index) { a.pause(); a.currentTime = 0; } });
+
+        // Play the clicked one
+        target.play();
+        setCurrentMusicIndex(index);
+    };
 
     // When the edits popup opens, attach click handlers to any <video> elements
     useEffect(() => {
@@ -68,6 +105,15 @@ const QuestPage: React.FC = () => {
             videos.forEach(v => v.removeEventListener('click', handleVideoClick));
         };
     }, [showEditsPopup]);
+
+    // Pause any music when the music popup closes
+    useEffect(() => {
+        if (!showMusicPopup) {
+            musicAudioRefs.current.forEach(a => { if (a) { a.pause(); a.currentTime = 0; } });
+            setCurrentMusicIndex(null);
+        }
+        // no cleanup needed here
+    }, [showMusicPopup]);
 
     if (showHomePage) {
         return <HomePage />;
@@ -228,10 +274,22 @@ const QuestPage: React.FC = () => {
 
                             <div className="mt-8 flex justify-center">
                                 <div className="grid grid-cols-2 gap-10">
-                                    <img src="/assets/questSong1.svg" alt="song 1" className="w-[24.6875rem] h-[14.875rem] object-cover " />
-                                    <img src="/assets/questSong2.svg" alt="song 2" className="w-[24.6875rem] h-[14.875rem] object-cover " />
-                                    <img src="/assets/questSong3.svg" alt="song 3" className="w-[24.6875rem] h-[14.875rem] object-cover " />
-                                    <img src="/assets/questSong4.svg" alt="song 4" className="w-[24.6875rem] h-[14.875rem] object-cover " />
+                                    {musicTracks.map((t, i) => (
+                                        <div key={i} className="relative">
+                                            <img
+                                                src={t.img}
+                                                alt={`song ${i + 1}`}
+                                                className="w-[24.6875rem] h-[14.875rem] object-cover cursor-pointer"
+                                                onClick={() => handlePlaySong(i)}
+                                            />
+                                            {/* Hidden audio element controlled by the image */}
+                                            <audio
+                                                ref={(el) => { if (el) musicAudioRefs.current[i] = el; }}
+                                                src={t.audio}
+                                                preload="auto"
+                                            />
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
 
