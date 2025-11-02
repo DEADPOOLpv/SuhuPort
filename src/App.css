@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+:root{
+	--suhu-anim-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Generic helper to encourage GPU-accelerated transforms and smoother transitions */
+.smooth-anim{
+	will-change: transform, opacity;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce){
+	* {
+		-webkit-animation-duration: 0.001ms !important;
+		animation-duration: 0.001ms !important;
+		-webkit-animation-iteration-count: 1 !important;
+		animation-iteration-count: 1 !important;
+		-webkit-transition-duration: 0.001ms !important;
+		transition-duration: 0.001ms !important;
+	}
+}

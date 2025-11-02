@@ -145,29 +145,49 @@ export default function HomePage() {
       })}
 
       <style>{`
+        /* Bounce animation (also provide -webkit- prefixed version for older WebKit browsers) */
+        @-webkit-keyframes bounce {
+          0%, 100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+          50% { -webkit-transform: translate3d(0, -3.125rem, 0); transform: translate3d(0, -3.125rem, 0); }
+        }
         @keyframes bounce {
-          0%, 100% {
-            transform: translateY(0rem);
-          }
-          50% {
-            transform: translateY(-3.125rem); /* -50px -> -3.125rem */
-          }
+          0%, 100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+          50% { -webkit-transform: translate3d(0, -3.125rem, 0); transform: translate3d(0, -3.125rem, 0); }
+        }
+
+        /* Shake animation with translate3d for smooth GPU-accelerated movement */
+        @-webkit-keyframes shake {
+          0% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
+          10% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          20% { -webkit-transform: translate3d(0.3125rem,0,0); transform: translate3d(0.3125rem,0,0); }
+          30% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          40% { -webkit-transform: translate3d(0.3125rem,0,0); transform: translate3d(0.3125rem,0,0); }
+          50% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          60% { -webkit-transform: translate3d(0.3125rem,0,0); transform: translate3d(0.3125rem,0,0); }
+          70% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          80% { -webkit-transform: translate3d(0.3125rem,0,0); transform: translate3d(0.3125rem,0,0); }
+          90% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          100% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
         }
         @keyframes shake {
-          0% { transform: translateX(0); }
-          10% { transform: translateX(-0.3125rem); } /* -5px -> -0.3125rem */
-          20% { transform: translateX(0.3125rem); }  /* 5px -> 0.3125rem */
-          30% { transform: translateX(-0.3125rem); }
-          40% { transform: translateX(0.3125rem); }
-          50% { transform: translateX(-0.3125rem); }
-          60% { transform: translateX(0.3125rem); }
-          70% { transform: translateX(-0.3125rem); }
-          80% { transform: translateX(0.3125rem); }
-          90% { transform: translateX(-0.3125rem); }
-          100% { transform: translateX(0); }
+          0% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
+          10% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          20% { -webkit-transform: translate3d(0.3125rem,0,0); transform: translate3d(0.3125rem,0,0); }
+          30% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          40% { -webkit-transform: translate3d(0.3125rem,0,0); transform: translate3d(0.3125rem,0,0); }
+          50% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          60% { -webkit-transform: translate3d(0.3125rem,0,0); transform: translate3d(0.3125rem,0,0); }
+          70% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          80% { -webkit-transform: translate3d(0.3125rem,0,0); transform: translate3d(0.3125rem,0,0); }
+          90% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }
+          100% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
         }
         .animate-shake {
+          -webkit-animation: shake 0.5s linear 0s 1;
           animation: shake 0.5s linear 0s 1;
+          will-change: transform;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
       `}</style>
     </div>

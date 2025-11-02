@@ -96,35 +96,30 @@ const ProjectsPage: React.FC = () => {
             <style>{`
               /* Smoother bounce animation: finer keyframes and an ease-out cubic-bezier.
                  Use 'both' fill-mode and will-change to avoid a final hitch/snapping. */
+              @-webkit-keyframes bounceUp {
+                0% { -webkit-transform: translate3d(0,100vh,0) scale(0.6); transform: translate3d(0,100vh,0) scale(0.6); opacity: 0; }
+                40% { -webkit-transform: translate3d(0,-18px,0) scale(1.05); transform: translate3d(0,-18px,0) scale(1.05); opacity: 1; }
+                60% { -webkit-transform: translate3d(0,8px,0) scale(0.985); transform: translate3d(0,8px,0) scale(0.985); }
+                76% { -webkit-transform: translate3d(0,-6px,0) scale(1.01); transform: translate3d(0,-6px,0) scale(1.01); }
+                88% { -webkit-transform: translate3d(0,-2px,0) scale(1.003); transform: translate3d(0,-2px,0) scale(1.003); }
+                100% { -webkit-transform: translate3d(0,0,0) scale(1); transform: translate3d(0,0,0) scale(1); opacity: 1; }
+              }
               @keyframes bounceUp {
-                0% {
-                  transform: translateY(100vh) scale(0.6);
-                  opacity: 0;
-                }
-                40% {
-                  transform: translateY(-18px) scale(1.05);
-                  opacity: 1;
-                }
-                60% {
-                  transform: translateY(8px) scale(0.985);
-                }
-                76% {
-                  transform: translateY(-6px) scale(1.01);
-                }
-                88% {
-                  transform: translateY(-2px) scale(1.003);
-                }
-                100% {
-                  transform: translateY(0) scale(1);
-                  opacity: 1;
-                }
+                0% { -webkit-transform: translate3d(0,100vh,0) scale(0.6); transform: translate3d(0,100vh,0) scale(0.6); opacity: 0; }
+                40% { -webkit-transform: translate3d(0,-18px,0) scale(1.05); transform: translate3d(0,-18px,0) scale(1.05); opacity: 1; }
+                60% { -webkit-transform: translate3d(0,8px,0) scale(0.985); transform: translate3d(0,8px,0) scale(0.985); }
+                76% { -webkit-transform: translate3d(0,-6px,0) scale(1.01); transform: translate3d(0,-6px,0) scale(1.01); }
+                88% { -webkit-transform: translate3d(0,-2px,0) scale(1.003); transform: translate3d(0,-2px,0) scale(1.003); }
+                100% { -webkit-transform: translate3d(0,0,0) scale(1); transform: translate3d(0,0,0) scale(1); opacity: 1; }
               }
 
               .animate-bounce-up {
                 /* shorter duration, smoother easing and preserve end state */
+                -webkit-animation: bounceUp 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
                 animation: bounceUp 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
                 will-change: transform, opacity;
                 backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
               }
             `}</style>
         </div>

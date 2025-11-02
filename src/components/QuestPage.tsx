@@ -359,15 +359,23 @@ const QuestPage: React.FC = () => {
             )}
 
             <style>{`
+                @-webkit-keyframes popIn {
+                    0% { -webkit-transform: scale(0.9); transform: scale(0.9); opacity: 0; }
+                    60% { -webkit-transform: scale(1.03); transform: scale(1.03); opacity: 1; }
+                    100% { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
+                }
                 @keyframes popIn {
-                    0% { transform: scale(0.9); opacity: 0; }
-                    60% { transform: scale(1.03); opacity: 1; }
-                    100% { transform: scale(1); opacity: 1; }
+                    0% { -webkit-transform: scale(0.9); transform: scale(0.9); opacity: 0; }
+                    60% { -webkit-transform: scale(1.03); transform: scale(1.03); opacity: 1; }
+                    100% { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
                 }
 
                 .animate-pop-in {
+                    -webkit-animation: popIn 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
                     animation: popIn 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
                     will-change: transform, opacity;
+                    backface-visibility: hidden;
+                    -webkit-backface-visibility: hidden;
                 }
 
                 /* Hide scrollbar inside the popup content (cross-browser) */

@@ -79,23 +79,24 @@ const MePage: React.FC = () => {
                     from { transform: rotate(75deg) translateX(13.4375rem) rotate(-75deg); }
                     to { transform: rotate(435deg) translateX(13.4375rem) rotate(-435deg); }
                 }
-                .animate-orbit-1 { animation: orbit1 30s linear infinite; }
-                .animate-orbit-2 { animation: orbit2 35s linear infinite; }
-                .animate-orbit-3 { animation: orbit3 40s linear infinite; }
-                .animate-orbit-4 { animation: orbit4 32s linear infinite; }
-                .animate-orbit-5 { animation: orbit5 38s linear infinite; }
-                .animate-orbit-6 { animation: orbit6 28s linear infinite; }
-                .animate-orbit-7 { animation: orbit7 42s linear infinite; }
-                .animate-orbit-8 { animation: orbit8 45s linear infinite; }
-                .animate-orbit-9 { animation: orbit9 25s linear infinite; }
-                .animate-orbit-10 { animation: orbit10 48s linear infinite; }
-                .animate-orbit-11 { animation: orbit11 52s linear infinite; }
-                .animate-orbit-12 { animation: orbit12 46s linear infinite; }
-                .animate-orbit-13 { animation: orbit13 55s linear infinite; }
-                .animate-orbit-14 { animation: orbit14 50s linear infinite; }
-                .animate-orbit-15 { animation: orbit15 58s linear infinite; }
-                .animate-orbit-16 { animation: orbit16 43s linear infinite; }
-                .animate-orbit-17 { animation: orbit17 60s linear infinite; }
+                /* Add -webkit-animation for older WebKit and GPU hints */
+                .animate-orbit-1 { -webkit-animation: orbit1 30s linear infinite; animation: orbit1 30s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-2 { -webkit-animation: orbit2 35s linear infinite; animation: orbit2 35s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-3 { -webkit-animation: orbit3 40s linear infinite; animation: orbit3 40s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-4 { -webkit-animation: orbit4 32s linear infinite; animation: orbit4 32s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-5 { -webkit-animation: orbit5 38s linear infinite; animation: orbit5 38s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-6 { -webkit-animation: orbit6 28s linear infinite; animation: orbit6 28s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-7 { -webkit-animation: orbit7 42s linear infinite; animation: orbit7 42s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-8 { -webkit-animation: orbit8 45s linear infinite; animation: orbit8 45s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-9 { -webkit-animation: orbit9 25s linear infinite; animation: orbit9 25s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-10 { -webkit-animation: orbit10 48s linear infinite; animation: orbit10 48s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-11 { -webkit-animation: orbit11 52s linear infinite; animation: orbit11 52s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-12 { -webkit-animation: orbit12 46s linear infinite; animation: orbit12 46s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-13 { -webkit-animation: orbit13 55s linear infinite; animation: orbit13 55s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-14 { -webkit-animation: orbit14 50s linear infinite; animation: orbit14 50s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-15 { -webkit-animation: orbit15 58s linear infinite; animation: orbit15 58s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-16 { -webkit-animation: orbit16 43s linear infinite; animation: orbit16 43s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+                .animate-orbit-17 { -webkit-animation: orbit17 60s linear infinite; animation: orbit17 60s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
             `}</style>
 
             {/* Animated circles layer - positioned to match me.svg */}
