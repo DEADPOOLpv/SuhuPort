@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { preloadAssets, areAllAssetsCached, clearOldCaches } from '../utils/preloadAssets';
+import catUrl from '../assets/cat.svg';
+import catWinkUrl from '../assets/catWink.svg';
 
 interface LoadingPageProps {
   onComplete?: () => void;
@@ -11,6 +13,23 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Programmatically preload the Vite-built (fingerprinted) mascot assets so the
+    // browser starts fetching them as soon as this component mounts.
+    const addPreload = (href: string) => {
+      try {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = href;
+        document.head.appendChild(link);
+      } catch {
+        // ignore
+      }
+    };
+
+    addPreload(catUrl);
+    addPreload(catWinkUrl);
+
     let cancelled = false;
     let returnTimer: ReturnType<typeof setTimeout> | undefined;
     let zoomDelayTimer: ReturnType<typeof setTimeout> | undefined;
@@ -90,7 +109,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-6">
         <div className="w-40 h-40 flex items-center justify-center">
           <img
-            src={isWinking ? '/assets/catWink.svg' : '/assets/cat.svg'}
+            src={isWinking ? catWinkUrl : catUrl}
             alt="Loading mascot"
             className={`w-full h-full object-contain transition-all duration-700 ease-in-out ${zoomed ? 'z-50' : ''}`}
             style={

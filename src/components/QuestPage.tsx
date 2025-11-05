@@ -182,7 +182,7 @@ const QuestPage: React.FC = () => {
                 onClick={handleHomeClick}
             >
                 <img className="w-16 h-14" src="/assets/cat.svg" alt="home" />
-                <span className="w-36 h-7 -mt-2.5 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">home</span>
+                <span className="w-36 h-7 -mt-2 text-center text-zinc-950 text-[20px] font-semibold lexend-exa lowercase tracking-[3px]">home</span>
             </button>
 
             {/* Contact Button */}
@@ -320,17 +320,17 @@ const QuestPage: React.FC = () => {
                                     <img src='/assets/smiths.jpg' alt='Smiths Poster' className=''/>
                                     <div className='w-[35.525rem] h-[6.1125rem] inter-font text-[#CAFF69]'>
                                         <p className='mx-5 text-[1.998125rem] font-extrabold tracking-[0.1em] uppercase'>Heaven Knows I&apos;m Miserable Now</p>
-                                        <p className='mx-5 text-[1.11rem] font-extralight tracking-[0.45em]'>The Smiths ‧ 1984</p>
+                                        <p className='mx-5 text-[1.11rem] font-extralight tracking-[0.45em] uppercase'>The Smiths ‧ 1984</p>
                                     </div>
                                     <div className='w-[35.525rem] h-[6.1125rem] inter-font text-[#CAFF69] text-right'>
                                         <p className='mx-10 text-[1.998125rem] font-extrabold tracking-[0.1em] uppercase'>Charles Leclerc</p>
-                                        <p className='mx-10 text-[1.11rem] font-extralight tracking-[0.45em]'>Scuderia Ferrari</p>
+                                        <p className='mx-10 text-[1.11rem] font-extralight tracking-[0.45em] uppercase'>Scuderia Ferrari</p>
                                     </div>
                                     <img src='/assets/leclerc.jpg' alt='Leclerc Poster' className=''/>
                                     <img src='/assets/arctic.jpg' alt='Arctic Monkeys Poster' className=''/>
                                     <div className='w-[568.4px] h-[97.8px] inter-font text-[#CAFF69]'>
                                         <p className='mx-5 text-[31.97px] font-extrabold tracking-[0.1em] uppercase'>Why&apos;d You Only Call Me When You&apos;re High?</p>
-                                        <p className='mx-5 text-[17.76px] font-extralight tracking-[0.45em]'>Arctic Monkeys ‧ 2013</p>
+                                        <p className='mx-5 text-[17.76px] font-extralight tracking-[0.45em] uppercase'>Arctic Monkeys ‧ 2013</p>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 gap-9 my-20">
