@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { preloadAssets, areAllAssetsCached, clearOldCaches } from '../utils/preloadAssets';
-import catUrl from '../assets/cat.svg';
-import catWinkUrl from '../assets/catWink.svg';
+const catUrl = '/assets/cat.svg';
+const catWinkUrl = '/assets/catWink.svg';
 
 interface LoadingPageProps {
   onComplete?: () => void;
@@ -59,6 +59,15 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
         const alreadyCached = await areAllAssetsCached();
         
         if (alreadyCached) {
+          // Ensure any old asset caches are removed when revisiting the site.
+          // This keeps cache names in sync with the current `preloadAssets` cache.
+          try {
+            await clearOldCaches();
+          } catch (e) {
+            // ignore - clear failure shouldn't block the UX
+            console.warn('clearOldCaches failed', e);
+          }
+
           // Skip preloading, set progress to 100% immediately
           if (!cancelled) {
             setProgress(100);
