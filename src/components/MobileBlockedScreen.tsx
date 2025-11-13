@@ -3,7 +3,7 @@ import React from 'react';
 
 const MobileBlockedScreen: React.FC = () => {
   return (
-    <div className="min-h-screen bg-lime-50 flex items-center justify-center p-6">
+    <div className="w-full h-full fixed inset-0 bg-lime-50 flex items-center justify-center p-6 overflow-hidden">
       <div className="max-w-md w-full text-center">
         {/* Icon */}
         <div className="mb-8 flex justify-center">

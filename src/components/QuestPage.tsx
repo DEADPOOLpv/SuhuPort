@@ -120,9 +120,9 @@ const QuestPage: React.FC = () => {
     }
 
     return (
-        <body className="w-screen h-screen relative">
-            <img className="w-screen h-screen left-0 absolute" src="/assets/windowsBg.png" />
-            <img className="w-screen bottom-0 absolute" src="/assets/windowsTaskbar.svg" />
+        <body className="w-full h-full fixed inset-0 overflow-hidden">
+            <img className="w-full h-full fixed left-0 top-0" src="/assets/windowsBg.png" />
+            <img className="w-full fixed bottom-0" src="/assets/windowsTaskbar.svg" />
             <img className="w-20 h-20 left-[3.5rem] top-[25.0625rem] absolute" src="/assets/windowsBin.png" />
             <img className="w-20 h-20 left-[51.0625rem] top-[50rem] absolute" src="/assets/windowsExplorer.png" />
             <img className="w-20 h-20 left-[100rem] top-[7.9375rem] absolute" src="/assets/windowsDialup.png" />

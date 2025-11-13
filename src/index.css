@@ -20,29 +20,56 @@ html {
   -ms-content-zooming: none;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
+  /* Prevent automatic text scaling on Windows */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Fixed positioning to prevent zoom issues */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Prevent font boosting on mobile and Windows scaling */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Disable touch callouts and selections that can interfere with zoom */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 #root {
-  width: 100%;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
+  /* Prevent zoom on double-tap */
+  touch-action: manipulation;
 }
 
 img, video {
   max-width: 100%;
   height: auto;
+  /* Prevent dragging which can trigger zoom */
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: auto;
 }

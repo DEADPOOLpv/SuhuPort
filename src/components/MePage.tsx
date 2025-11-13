@@ -9,7 +9,7 @@ const MePage: React.FC = () => {
     }
 
     return (
-        <div className="w-screen h-screen relative bg-[#F2FFDA] overflow-hidden p-10">
+        <div className="w-full h-full fixed inset-0 bg-[#F2FFDA] overflow-hidden p-10">
             <style>{`
                 @keyframes orbit1 {
                     from { transform: rotate(0deg) translateX(9.375rem) rotate(0deg); }

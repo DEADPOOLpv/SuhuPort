@@ -9,7 +9,7 @@ const ProjectsPage: React.FC = () => {
     }
 
     return (
-        <div className="w-screen h-screen bg-[#F2FFDA] relative overflow-hidden z-60">
+        <div className="w-full h-full fixed inset-0 bg-[#F2FFDA] overflow-hidden z-60">
             <button
                 className="focus:outline-none absolute left-1/2 transform -translate-x-1/2 top-6 z-50"
                 onClick={() => setShowHomePage(true)}

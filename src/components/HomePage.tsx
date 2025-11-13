@@ -34,7 +34,7 @@ export default function HomePage() {
   if (showProjects) return <ProjectsPage />;
 
   return (
-    <div className="w-screen h-screen relative bg-[#CAFF69] overflow-hidden">
+    <div className="w-full h-full fixed inset-0 bg-[#CAFF69] overflow-hidden">
       {/* Name and Title */}
       <div className="absolute left-[13.75rem] top-[30rem] z-10 text-left">
         <div className="text-black font-bold text-[50px] tracking-[0.15em] inter-font text-left">
