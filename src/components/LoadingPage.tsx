@@ -110,7 +110,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
 
   return (
     <div 
-      className="flex items-center justify-center w-full h-full fixed inset-0 bg-lime-50 overflow-hidden" 
+      className="flex items-center justify-center fixed inset-0 bg-lime-50 overflow-hidden" 
       aria-busy={progress < 100 ? 'true' : 'false'}
       aria-live="polite"
       aria-label={`Loading assets: ${Math.round(progress)}%`}
@@ -120,7 +120,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onComplete }) => {
           <img
             src={isWinking ? catWinkUrl : catUrl}
             alt="Loading mascot"
-            className={`w-full h-full object-contain transition-all duration-700 ease-in-out ${zoomed ? 'z-50' : ''}`}
+            className={`object-contain transition-all duration-700 ease-in-out ${zoomed ? 'z-50' : ''}`}
             style={
               zoomed
                 ? {

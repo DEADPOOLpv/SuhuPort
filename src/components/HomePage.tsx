@@ -11,9 +11,9 @@ export default function HomePage() {
   const [showProjects, setShowProjects] = useState(false);
 
   const bubbles = [
-    { id: 1, label: 'RESUME', color: 'text-[#0026FF]', bg: 'bg-[#0026FF]', top: '3.75rem', left: '51%' },   // 60px -> 3.75rem
-    { id: 3, label: 'QUEST', color: 'text-[#CF0067]', bg: 'bg-[#CF0067]', top: '12.5rem', left: '51%' },    // 200px -> 12.5rem
-    { id: 2, label: 'PROJECTS', color: 'text-[#FF712F]', bg: 'bg-[#FF712F]', top: '8.125rem', left: '44%' } // 130px -> 8.125rem
+    { id: 1, label: 'RESUME', color: 'text-[#0026FF]', bg: 'bg-[#0026FF]', top: '3.75rem', left: '51%' },
+    { id: 3, label: 'QUEST', color: 'text-[#CF0067]', bg: 'bg-[#CF0067]', top: '12.5rem', left: '51%' },
+    { id: 2, label: 'PROJECTS', color: 'text-[#FF712F]', bg: 'bg-[#FF712F]', top: '8.125rem', left: '44%' }
   ];
 
   const handleMouseEnter = (id: number) => {
@@ -34,13 +34,13 @@ export default function HomePage() {
   if (showProjects) return <ProjectsPage />;
 
   return (
-    <div className="w-full h-full fixed inset-0 bg-[#CAFF69] overflow-hidden">
+    <div className="fixed inset-0 bg-[#CAFF69] overflow-hidden">
       {/* Name and Title */}
       <div className="absolute left-[13.75rem] top-[30rem] z-10 text-left">
         <div className="text-black font-bold text-[50px] tracking-[0.15em] inter-font text-left">
           <p> SUHAANI </p> <p className='-mt-6'>NIGAM</p>
         </div>
-        <div className=" text-black font-medium text-[20px] tracking-[0.51em] inter-font">
+        <div className="text-black font-medium text-[20px] tracking-[0.51em] inter-font">
           VISUAL DESIGNER
         </div>
       </div>
@@ -62,7 +62,7 @@ export default function HomePage() {
 
       {/* About Me Button */}
       <button
-        className="absolute right-[12.5rem] top-[38.75rem] -translate-y-1/2 z-10 bg-[#CF0067] text-[#CAFF69] animate-[bounce_5s_ease-in-out_infinite] font-extrabold text-[20px] tracking-[0.16em] px-6 py-2 rounded-sm shadow-lg transition-transform hover:scale-105 cursor-pointer" /* 620px -> 38.75rem */
+        className="absolute right-[12.5rem] top-[38.75rem] -translate-y-1/2 z-10 bg-[#CF0067] text-[#CAFF69] animate-[bounce_5s_ease-in-out_infinite] font-extrabold text-[20px] tracking-[0.16em] px-6 py-2 rounded-sm shadow-lg transition-transform hover:scale-105 cursor-pointer"
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
       >
@@ -145,7 +145,7 @@ export default function HomePage() {
       })}
 
       <style>{`
-        /* Bounce animation (also provide -webkit- prefixed version for older WebKit browsers) */
+        /* Bounce animation */
         @-webkit-keyframes bounce {
           0%, 100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
           50% { -webkit-transform: translate3d(0, -3.125rem, 0); transform: translate3d(0, -3.125rem, 0); }
@@ -155,7 +155,7 @@ export default function HomePage() {
           50% { -webkit-transform: translate3d(0, -3.125rem, 0); transform: translate3d(0, -3.125rem, 0); }
         }
 
-        /* Shake animation with translate3d for smooth GPU-accelerated movement */
+        /* Shake animation */
         @-webkit-keyframes shake {
           0% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
           10% { -webkit-transform: translate3d(-0.3125rem,0,0); transform: translate3d(-0.3125rem,0,0); }

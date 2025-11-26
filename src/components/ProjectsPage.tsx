@@ -1,8 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HomePage from './HomePage';
 
 const ProjectsPage: React.FC = () => {
     const [showHomePage, setShowHomePage] = useState(false);
+    const [scaleFactor, setScaleFactor] = useState(1);
+
+    useEffect(() => {
+        const updateScale = () => {
+            const dpr = window.devicePixelRatio || 1;
+            // If Windows scaling is above 100%, scale down the images significantly
+            // At 125% (dpr=1.25), this gives us 0.64 scale
+            setScaleFactor(dpr > 1 ? 0.64 : 1);
+        };
+
+        updateScale();
+        window.addEventListener('resize', updateScale);
+
+        return () => {
+            window.removeEventListener('resize', updateScale);
+        };
+    }, []);
 
     if (showHomePage) {
         return <HomePage />;
@@ -22,7 +39,7 @@ const ProjectsPage: React.FC = () => {
                 </div>
             </button>
             
-            <div className="animate-bounce-up relative w-full h-[calc(100vh-6.25rem)]">
+            <div className="animate-bounce-up relative w-full h-[calc(100vh-6.25rem)] mt-10" style={{ transform: `scale(${scaleFactor})`, transformOrigin: 'top center', width: '100%', height: 'calc(100vh - 6.25rem)' }}>
         
               {/* SponsHub Card - Top Left */}
               <a
@@ -71,7 +88,7 @@ const ProjectsPage: React.FC = () => {
 
               {/* Coming Soon Card 1 - Bottom Center */}
               <div 
-                className="absolute bottom-[1%] left-[39%]"
+                className="absolute bottom-[-3rem] left-[39%]"
                 style={{ filter: 'drop-shadow(0 1.125rem 2.5rem rgba(0,0,0,0.18))' }}
               >
                 <img

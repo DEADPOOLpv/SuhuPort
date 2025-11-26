@@ -35,10 +35,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
   overflow: hidden;
   position: fixed;
+  top: 0;
+  left: 0;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -48,11 +48,11 @@ body {
   /* Disable touch callouts and selections that can interfere with zoom */
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+  /* Set a fixed font-size baseline */
+  font-size: 16px;
 }
 
 #root {
-  width: 100vw;
-  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;

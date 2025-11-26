@@ -4,6 +4,71 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="public/assets/catWink.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script>
+      // Apply DPI compensation - runs fresh every time
+      (function() {
+        function applyDPIFix() {
+          var dpr = window.devicePixelRatio || 1;
+          
+          // Force clear any existing styles first
+          document.documentElement.removeAttribute('style');
+          if (document.body) {
+            document.body.removeAttribute('style');
+          }
+          
+          // Function to set dimensions
+          function setDimensions() {
+            var root = document.getElementById('root');
+            var widthValue = (dpr > 1 ? (100 * dpr) : 100) + 'vw';
+            var heightValue = (dpr > 1 ? (100 * dpr) : 100) + 'vh';
+            
+            if (document.body) {
+              // Force remove any cached styles
+              document.body.removeAttribute('style');
+              document.body.style.cssText = 'width: ' + widthValue + '; height: ' + heightValue + ';';
+            }
+            if (root) {
+              root.removeAttribute('style');
+              root.style.cssText = 'width: ' + widthValue + '; height: ' + heightValue + ';';
+            }
+          }
+          
+          // Apply zoom only if Windows scaling is above 100%
+          if (dpr > 1) {
+            document.documentElement.style.cssText = 'zoom: ' + (1 / dpr);
+          }
+          
+          // Set dimensions immediately if possible
+          setDimensions();
+          
+          // Also set on DOM ready
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setDimensions);
+          }
+          
+          // Force again after a tiny delay to override any cached values
+          setTimeout(setDimensions, 10);
+        }
+        
+        // Apply immediately
+        applyDPIFix();
+        
+        // Apply on DOM content loaded
+        document.addEventListener('DOMContentLoaded', applyDPIFix);
+        
+        // Apply on full page load
+        window.addEventListener('load', applyDPIFix);
+        
+        // Reapply on resize
+        window.addEventListener('resize', applyDPIFix);
+        
+        // Force reapply on page show
+        window.addEventListener('pageshow', applyDPIFix);
+      })();
+    </script>
     <!-- Preconnect to Google Fonts for faster connection handshake -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
