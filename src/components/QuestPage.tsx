@@ -232,7 +232,7 @@ const QuestPage: React.FC = () => {
                             <div className="flex flex-col items-center pt-2">
                                 <img src="/assets/cat.svg" alt="logo" className="w-10 h-10 mb-13" />
                                 <p className="inter-font font-semibold text-[17.78px] mb-2">Like what you see?</p>
-                                <a className="px-6 py-2 mb-8 bg-white border border-[#A3E230] rounded-full text-[#A3E230] inter-font font-bold text-[21.33px] tracking-[0.07em] transition-colors duration-200 hover:bg-[#A3E230] hover:text-white" href="mailto:suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">BUY NOW</a>
+                                <a className="px-6 py-2 mb-8 bg-white border border-[#A3E230] rounded-full text-[#A3E230] inter-font font-bold text-[21.33px] tracking-[0.07em] transition-colors duration-200 hover:bg-[#A3E230] hover:text-white" href="https://www.instagram.com/meltinklab/" target="_blank" rel="noopener noreferrer">BUY NOW</a>
                             </div>
 
                             {/* Posters area (grid) */}
@@ -251,7 +251,7 @@ const QuestPage: React.FC = () => {
 
                             {/* Secondary CTA at the end of images */}
                             <div className="mt-18 mb-1 flex justify-center">
-                              <a className="px-6 py-2 bg-white border border-[#A3E230] rounded-full text-[#A3E230] inter-font font-bold text-[21.33px] tracking-[0.07em] transition-colors duration-200 hover:bg-[#A3E230] hover:text-white" href="mailto:suhaani2301@gmail.com" target="_blank" rel="noopener noreferrer">BUY NOW</a>
+                              <a className="px-6 py-2 bg-white border border-[#A3E230] rounded-full text-[#A3E230] inter-font font-bold text-[21.33px] tracking-[0.07em] transition-colors duration-200 hover:bg-[#A3E230] hover:text-white" href="https://www.instagram.com/meltinklab/" target="_blank" rel="noopener noreferrer">BUY NOW</a>
                             </div>
                         </div>
                     </div>
