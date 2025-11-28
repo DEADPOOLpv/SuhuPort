@@ -1,4 +1,4 @@
-# 🚀 SuhuPort - Professional Portfolio Website
+# SuhuPort - Artistic Portfolio Website
 
 A modern, responsive portfolio website built with cutting-edge web technologies, showcasing advanced frontend development skills and best practices in React ecosystem development.
 
