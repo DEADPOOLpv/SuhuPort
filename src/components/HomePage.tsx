@@ -47,7 +47,7 @@ export default function HomePage() {
 
       {/* Floating Lady Illustration as hyperlink with animation */}
       <button
-        className="absolute left-[60%] top-[37.5rem] -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer"
+        className="absolute left-[60%] top-[35.5rem] -translate-x-1/2 -translate-y-1/2 z-0 bg-transparent border-none p-0 m-0 cursor-pointer"
         onClick={() => setShowMePage(true)}
         aria-label="About Me"
         style={{ outline: 'none' }}
@@ -148,11 +148,11 @@ export default function HomePage() {
         /* Bounce animation */
         @-webkit-keyframes bounce {
           0%, 100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-          50% { -webkit-transform: translate3d(0, -3.125rem, 0); transform: translate3d(0, -3.125rem, 0); }
+          50% { -webkit-transform: translate3d(0, -2.125rem, 0); transform: translate3d(0, -1.125rem, 0); }
         }
         @keyframes bounce {
           0%, 100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-          50% { -webkit-transform: translate3d(0, -3.125rem, 0); transform: translate3d(0, -3.125rem, 0); }
+          50% { -webkit-transform: translate3d(0, -2.125rem, 0); transform: translate3d(0, -1.125rem, 0); }
         }
 
         /* Shake animation */
