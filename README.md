@@ -2,9 +2,9 @@
 
 A modern, responsive portfolio website built with cutting-edge web technologies, showcasing advanced frontend development skills and best practices in React ecosystem development.
 
-[![TypeScript](https://img.shields. io/badge/TypeScript-89. 6%25-blue.svg)](https://www.typescriptlang.org/)
-[![React](https://img. shields.io/badge/React-19.1. 1-61dafb.svg)](https://reactjs.org/)
-[![Vite](https://img.shields. io/badge/Vite-7.1.7-646cff.svg)](https://vitejs.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-89.6%25-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19.1.1-61dafb.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.1.7-646cff.svg)](https://vitejs.dev/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1.14-38bdf8.svg)](https://tailwindcss.com/)
 
 ## 📋 Overview
