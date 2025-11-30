@@ -334,14 +334,14 @@ const QuestPage: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 gap-9 my-20">
-                                    <img src='assets/questGraphics1.png' alt='poster 1'/>
-                                    <img src='assets/questGraphics2.png' alt='poster 2'/>
-                                    <img src='assets/questGraphics3.png' alt='poster 3'/>
-                                    <img src='assets/questGraphics4.png' alt='poster 4'/>
-                                    <img src='assets/questGraphics5.png' alt='poster 5'/>
-                                    <img src='assets/questGraphics6.png' alt='poster 6'/>
-                                    <img src='assets/questGraphics7.png' alt='poster 7'/>
-                                    <img src='assets/questGraphics8.png' alt='poster 8'/>
+                                    <img src='/assets/questGraphics1.png' alt='poster 1'/>
+                                    <img src='/assets/questGraphics2.png' alt='poster 2'/>
+                                    <img src='/assets/questGraphics3.png' alt='poster 3'/>
+                                    <img src='/assets/questGraphics4.png' alt='poster 4'/>
+                                    <img src='/assets/questGraphics5.png' alt='poster 5'/>
+                                    <img src='/assets/questGraphics6.png' alt='poster 6'/>
+                                    <img src='/assets/questGraphics7.png' alt='poster 7'/>
+                                    <img src='/assets/questGraphics8.png' alt='poster 8'/>
                                 </div>
                             </div>
                         </div>
