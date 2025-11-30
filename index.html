@@ -8,9 +8,18 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <script>
-      // Apply DPI compensation - runs fresh every time
+      // Apply DPI compensation - runs fresh every time (Windows only)
       (function() {
         function applyDPIFix() {
+          // Detect if user is on Windows
+          var isWindows = navigator.platform.indexOf('Win') > -1 || 
+                         navigator.userAgent.indexOf('Windows') > -1;
+          
+          // Only apply DPI fix on Windows
+          if (!isWindows) {
+            return;
+          }
+          
           var dpr = window.devicePixelRatio || 1;
           
           // Force clear any existing styles first
