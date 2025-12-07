@@ -102,7 +102,7 @@ export default function HomePage() {
           >
             {isResume ? (
               <a
-                href="https://www.notion.so/Suhaani-Nigam-281906501a6180bf89f9e2394077fccb"
+                href="https://drive.google.com/file/d/1rAs0Ez7KBELBsfWPqcprOxaSO5dnthFj/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
