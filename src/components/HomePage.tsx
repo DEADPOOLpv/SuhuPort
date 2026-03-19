@@ -102,7 +102,7 @@ export default function HomePage() {
           >
             {isResume ? (
               <a
-                href="https://drive.google.com/file/d/1rAs0Ez7KBELBsfWPqcprOxaSO5dnthFj/view?usp=sharing"
+                href="https://drive.google.com/file/d/1l01vlTOaFVHwVe3cbMVDOg86SDHO8ncn/view?usp=drivesdk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
